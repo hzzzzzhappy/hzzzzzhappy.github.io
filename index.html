@@ -87,40 +87,18 @@
         </tr>
     </table>
 </div>
- <div class="publications">
-        <h2>出版物</h2>
+    <div class="publications">
+        <h2>Publication</h2>
         <div class="publication-item">
-            <div class="publication-title">2025.2.1 Preprint</div>
+            <span class="publication-title">2025.2.1 Preprint</span>:
             <a href="https://arxiv.org/abs/2503.01100" class="publication-link">Fence Theorem: Towards Dual-Objective Semantic-Structure Isolation in Preprocessing Phase for 3D Anomaly Detection</a>
-            <div class="publication-abstract">
-                摘要：3D anomaly detection (AD) is prominent but difficult due to lacking a unified theoretical foundation for preprocessing design. We establish the <strong>Fence Theorem</strong>, formalizing preprocessing as a dual-objective semantic isolator: (1) mitigating cross-semantic interference to the greatest extent feasible and (2) confining anomaly judgments to aligned semantic spaces wherever viable, thereby establishing intra-semantic comparability. Through systematic deconstruction, we theoretically and experimentally subsume existing preprocessing methods under this theorem via tripartite evidence: qualitative analyses, quantitative studies, and mathematical proofs. Guided by the Fence Theorem, we implement Patch3D, consisting of Patch-Cutting and Patch-Matching modules, to segment semantic spaces and consolidate similar ones while independently modeling normal features within each space. Experiments on Anomaly-ShapeNet and Real3D-AD with different settings demonstrate that progressively finer-grained semantic alignment in preprocessing directly enhances point-level AD accuracy, providing inverse validation of the theorem's causal logic.
-            </div>
         </div>
         <div class="publication-item">
-            <div class="publication-title">2024.12.8 AAAI25</div>
-            <a href="https://arxiv.org/abs/2412.13461" class="publication-link">Look Inside for More: Internal Spatial Modality Perception for 3D Anomaly Detection</a>
-            <a href="https://github.com/M-3LAB/Look-Inside-for-More" class="publication-link publication-code">[code]</a>
-            <div class="publication-abstract">
-                摘要：3D anomaly detection has recently become a significant focus in computer vision. Several advanced methods have achieved satisfying anomaly detection performance. However, they typically concentrate on the external structure of 3D samples and struggle to leverage the internal information embedded within samples. Inspired by the basic intuition of why not look inside for more, we introduce a straightforward method named Internal Spatial Modality Perception (ISMP) to explore the feature representation from internal views fully. Specifically, our proposed ISMP consists of a critical perception module, Spatial Insight Engine (SIE), which abstracts complex internal information of point clouds into essential global features. Besides, to better align structural information with point data, we propose an enhanced key point feature extraction module for amplifying spatial structure feature representation. Simultaneously, a novel feature filtering module is incorporated to reduce noise and redundant features for further aligning precise spatial structure. Extensive experiments validate the effectiveness of our proposed method, achieving object-level and pixel-level AUROC improvements of 3.2% and 13.1%, respectively, on the Real3D-AD benchmarks. Note that the strong generalization ability of SIE has been theoretically proven and is verified in both classification and segmentation tasks.
-            </div>
+            <span class="publication-title">2024.12.8 AAAI25</span>:
+            <a href="https://arxiv.org/abs/2412.13461" class="publication-link">Look Inside for More: Internal Spatial Modality Perception for 3D Anomaly Detection</a> 
+            [[<a href="https://github.com/M-3LAB/Look-Inside-for-More" class="publication-link">code</a>]]
         </div>
-        <div class="publication-item unpublished">
-            <p>我还有很多未发布的研究（大概六七篇由我主导或参与的），包括单（多）模态异常检测和AI for education。我对2D/3D异常检测相关的一切研究感兴趣，并密切关注多媒体对教育界的影响。我正在与几位富有创造力的合著者合作探索这些方向，我期待与更多人合作，扩展自己的研究视野。</p>
-        </div>
+        <p>我还有很多没有发布的研究（大概六七篇由我主导或参与的），包括单（多）模态异常检测和AI for education，我对2D/3D异常检测相关的一切研究感兴趣，并密切关注多媒体对教育界的影响。我正在与几位富有创造力的合著者合作探索这些方向，我期待与更多人合作，扩展自己的研究视野。</p>
     </div>
-
-    <script>
-        // 点击标题展开/收起摘要
-        document.querySelectorAll('.publication-title').forEach(title => {
-            title.addEventListener('click', () => {
-                const abstract = title.nextElementSibling.nextElementSibling;
-                if (abstract.style.display === 'block') {
-                    abstract.style.display = 'none';
-                } else {
-                    abstract.style.display = 'block';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
