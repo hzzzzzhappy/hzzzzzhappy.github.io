@@ -41,17 +41,18 @@ education:
   
 - name: Audencia Business School, Nantes, France
   logo: /assets/images/badges/Audenica.png
-  # position: B.S. in Computer Science
+    position: >-
+    Undergraduate Student
   date: Sep. 2023 - present
 
 experience:
 - name: Eastern Institute of Technology (EIT), Ningbo
-  # logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/EIT.jpg
   position: Research Intern
   date: April. 2025 - present
   
 - name: Institute of Computer Vision, Shenzhen University
-  # logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/SZU.jpg
   position: Research Intern
   date: May. 2024 - present
 
