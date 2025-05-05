@@ -32,14 +32,14 @@ short_bio: >-
 #   Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
 education:
-- name: Shenzhen University
+- name: Shenzhen University, Shenzhen, China
   logo: /assets/images/badges/SZU.jpg
   position: >- 
     Shenzhen Financial Technology Institute <br/>
     Undergraduate Student
   date: Sep. 2023 - present
-- name: Audencia Bussiness School
-  logo: /assets/images/badges/Audencia.png
+- name: Audencia Business School, Nantes, France
+  logo: /assets/images/badges/Audenica.png
   # position: B.S. in Computer Science
   date: Sep. 2023 - present
 
