@@ -35,7 +35,6 @@ education:
 - name: Shenzhen University, Shenzhen, China
   logo: /assets/images/badges/SZU.jpg
   position: >- 
-    Shenzhen Financial Technology Institute <br/>
     Undergraduate Student
   date: Sep. 2023 - present
   
@@ -46,12 +45,12 @@ education:
   date: Sep. 2023 - present
 
 experience:
-- name: Eastern Institute of Technology (EIT), Ningbo
+- name: Eastern Institute of Technology (EIT), Ningbo, China
   logo: /assets/images/badges/EIT.jpg
   position: Research Intern
   date: April. 2025 - present
   
-- name: Institute of Computer Vision, Shenzhen University
+- name: Institute of Computer Vision at Shenzhen University, Shenzhen China
   logo: /assets/images/badges/SZU.jpg
   position: Research Intern
   date: May. 2024 - present
