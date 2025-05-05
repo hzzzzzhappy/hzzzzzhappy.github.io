@@ -30,3 +30,12 @@ body_attr: >-
     </div>
 
 </div>
+<!-- 作者行 -->
+<div class="authors mb-2">
+  {{ item.authors | replace: "✝", "<sup>✝</sup>" }}
+</div>
+
+<!-- 新增：通讯作者说明 -->
+{% if item.authors contains "✝" %}
+  <small class="text-muted d-block mt-1">✝ Corresponding authors</small>
+{% endif %}
