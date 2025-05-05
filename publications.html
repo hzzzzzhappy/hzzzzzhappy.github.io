@@ -1,10 +1,35 @@
 ---
 layout: default
-title : Publications
+title: Publications
 navbar_title: Publications
 body_attr: >-
   data-spy="scroll" data-target="#navbar-year" data-offset="100"
 ---
+
+<style>
+  .publication-container {
+    transition: all 0.3s ease;
+  }
+  .publication-container:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+  .corresponding-note {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .nav-link.active {
+    font-weight: 600;
+    color: #2c3e50;
+    border-left: 3px solid #2c3e50;
+  }
+  .venue-badge {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 500;
+  }
+</style>
 
 {% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
@@ -12,30 +37,55 @@ body_attr: >-
     <div class="col-12 col-lg-10">
         {% for year in pubs_by_year %}
         {% assign num_papers = year.items | size %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
-        <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
+        <h2 class="pt-4 mb-3" id="year-{{ year.name }}">
+          {{ year.name }} 
+          <span class="badge bg-secondary">{{ num_papers }} paper{% if num_papers > 1 %}s{% endif %}</span>
+        </h2>
+        
+        <div class="publication-container my-0 p-3 bg-white rounded shadow-sm mb-4">
             {% for item in year.items %}
-                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+                {% include widgets/publication_item.html 
+                   item=item 
+                   hide_bottom_border=forloop.last 
+                   first=forloop.first 
+                   last=forloop.last 
+                %}
+                {% if item.authors contains "✝" %}
+                  <div class="corresponding-note">✝ Corresponding authors</div>
+                {% endif %}
             {% endfor %}
         </div>
         {% endfor %}
     </div>
 
     <div class="col-2 d-none d-lg-block">
-        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
+        <div id="navbar-year" class="nav nav-pills flex-column sticky-top pt-2" style="top: 80px">
             {% for year in pubs_by_year %}
-            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
+            <a class="nav-link mb-1 ps-3" href="#year-{{ year.name }}">
+              {{ year.name }} 
+              <span class="badge bg-light text-dark ms-1">{{ year.items | size }}</span>
+            </a>
             {% endfor %}
         </div>
     </div>
-
-</div>
-<!-- 作者行 -->
-<div class="authors mb-2">
-  {{ item.authors | replace: "✝", "<sup>✝</sup>" }}
 </div>
 
-<!-- 新增：通讯作者说明 -->
-{% if item.authors contains "✝" %}
-  <small class="text-muted d-block mt-1">✝ Corresponding authors</small>
-{% endif %}
+<script>
+// Highlight active year in navbar while scrolling
+window.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`#navbar-year a[href="#${id}"]`).classList.add('active');
+      } else {
+        document.querySelector(`#navbar-year a[href="#${id}"]`).classList.remove('active');
+      }
+    });
+  }, {threshold: 0.8});
+
+  document.querySelectorAll('h2[id^="year-"]').forEach((section) => {
+    observer.observe(section);
+  });
+});
+</script>
