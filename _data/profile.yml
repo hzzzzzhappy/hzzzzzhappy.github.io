@@ -21,11 +21,12 @@ short_bio_text_justify: false
 short_bio: >-
   <p>
     我自2023年9月开始分别在深圳大学金融科技学院和法国深圳南特金融科技学院研习信息管理与信息系统管理学学位和区块链信息系统理学学位。我于2024年5月开始在深圳大学计算机视觉研究所进修，受指导于高灿教授和王金宝教授。自2025年4月开始，我作为研究助理参加东方理工大学的实习项目，导师是金鑫教授和曾文军教授。
-    我的研究聚焦于2D/3D异常检测，研究兴趣还包括教育中的多媒体。
+    我的研究聚焦于2D/3D异常检测，研究兴趣还包括教育中的多媒体。我还是ICLR, IJCAI, ICCV和CVPR等会议和"Pattern Recognition"等期刊的审稿人。
   </p>
   <p>
      I have been studying for a degree in Management of Information Systems at Shenzhen University and Science of Blockchain Information Systems at Audencia since September 2023, respectively. I have been studying at the Institute of Computer Vision, Shenzhen University since May 2024 under the supervision of Prof Gao Can and Prof Wang Jinbao. 
      Since April 2025, I have been participating in the internship programme at the Ningbo EIT as a research assistant (RA) under the supervision of Prof. Jin Xin and Prof. Zeng Wenjun. My research focuses on 2D/3D anomaly detection, and my research interests also include multimedia in education.
+     I am also a reviewer for conferences such as ICLR, IJCAI, ICCV and CVPR, and for journals such as Pattern Recognition.
   </p>
 # portrait_url: /assets/images/photos/portrait.jpg
 # portrait_caption: >-
