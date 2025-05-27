@@ -4,6 +4,7 @@ date: 2025-01-01
 authors: "Hanzhe Liang, Jie zhou, Xuanxin Chen, Jinbao Wang✝, Can Gao✝"
 venue: "Arxiv"
 selected: false
-arxiv: "https://arxiv.org/abs/2503.01100v2"
 cover: "/assets/images/publication/patch3d.png"
+links:
+  Unsplash: https://arxiv.org/abs/2503.01100v2
 ---
