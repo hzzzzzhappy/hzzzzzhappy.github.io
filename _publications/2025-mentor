@@ -6,4 +6,6 @@ pub_post: 'Under review.'
 selected: false
 arxiv: "https://arxiv.org/abs/2503.01100v2"
 cover: "/assets/images/publication/mentor3d.png"
+links:
+  Unsplash: https://arxiv.org/html/2505.21420v1
 ---
