@@ -6,5 +6,5 @@ pub: "MM25' (poster)"
 selected: true
 cover: "/assets/images/publication/MMDUS.png"
 links:
-  Unsplash: https://www.researchgate.net/publication/393444038_arXivsubmit6597613_csCV_5_Jul_2025_Taming_Anomalies_with_Down-Up_Sampling_Networks_Group_Center_Preserving_Reconstruction_for_3D_Anomaly_Detection
+  Unsplash: https://arxiv.org/pdf/2507.03903
 ---
