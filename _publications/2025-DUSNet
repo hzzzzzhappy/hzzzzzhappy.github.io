@@ -5,5 +5,6 @@ authors: "Hanzhe Liang, Jie Zhang, Tao Dai, Linlin Shen, Jinbao Wang, Can Gao"
 pub: "MM25' (poster)"
 selected: true
 cover: "/assets/images/publication/MMDUS.png"
-links: https://arxiv.org/pdf/2507.03903
+links: 
+    arxiv: https://arxiv.org/pdf/2507.03903
 ---
