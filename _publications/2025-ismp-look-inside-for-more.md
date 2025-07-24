@@ -6,5 +6,5 @@ pub: "AAAI25' (poster)"
 selected: true
 cover: "/assets/images/publication/AAAI25ISMP.png"
 links:
-arxiv: https://arxiv.org/abs/2412.13461v2
+    arxiv: https://arxiv.org/abs/2412.13461v2
 ---
