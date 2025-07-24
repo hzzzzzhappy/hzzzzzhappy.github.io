@@ -5,5 +5,6 @@ authors: "Hanzhe Liang, Aoran Wang, Jie Zhou, Xin Jin, Can Gao, Jinbao Wang, Can
 selected: true
 cover: "/assets/images/publication/MC4AD.png"
 pub_post: 'Under review.'
-links: https://arxiv.org/abs/2505.05901v2
+links: 
+arxiv:https://arxiv.org/abs/2505.05901v2
 ---
