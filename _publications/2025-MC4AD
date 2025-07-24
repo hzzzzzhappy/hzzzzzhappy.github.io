@@ -6,5 +6,5 @@ selected: true
 cover: "/assets/images/publication/MC4AD.png"
 pub_post: 'Under review.'
 links: 
-arxiv:https://arxiv.org/abs/2505.05901v2
+    arxiv:https://arxiv.org/abs/2505.05901v2
 ---
