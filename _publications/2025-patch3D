@@ -6,5 +6,5 @@ selected: true
 pub_post: 'ICCV Workshop (oral).'
 cover: "/assets/images/publication/patch3d.png"
 links:
-arxiv: https://arxiv.org/abs/2503.01100v2
+    arxiv: https://arxiv.org/abs/2503.01100v2
 ---
