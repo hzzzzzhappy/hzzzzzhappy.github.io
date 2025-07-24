@@ -5,6 +5,5 @@ authors: "Hanzhe Liang, Guoyang Xie, Chengbin Hou, Bingshu Wang, Can Gao✝, Jin
 pub: "AAAI25' (poster)"
 selected: true
 cover: "/assets/images/publication/AAAI25ISMP.png"
-links:
-  Unsplash: https://arxiv.org/abs/2412.13461v2
+links: https://arxiv.org/abs/2412.13461v2
 ---
