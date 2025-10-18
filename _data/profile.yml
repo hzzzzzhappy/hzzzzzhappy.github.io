@@ -33,21 +33,21 @@ education:
     Undergraduate Student
   date: Sep. 2023 - present
 
-experience:
-- name: Shanghai Artificial Intelligence Laboratory, Shanghai, China
-  logo: /assets/images/badges/AILab.jpg
-  position: Research Intern
-  date: Sep. 2025 - present
+# experience:
+# - name: Shanghai Artificial Intelligence Laboratory, Shanghai, China
+#   logo: /assets/images/badges/AILab.jpg
+#   position: Research Intern
+#   date: Sep. 2025 - present
   
-- name: Eastern Institute of Technology (EIT), Ningbo, China
-  logo: /assets/images/badges/EIT.jpg
-  position: Research Intern
-  date: May. 2025 - Sep. 2025
+# - name: Eastern Institute of Technology (EIT), Ningbo, China
+#   logo: /assets/images/badges/EIT.jpg
+#   position: Research Intern
+#   date: May. 2025 - Sep. 2025
   
-- name: Institute of Computer Vision, Shenzhen University, Shenzhen, China
-  logo: /assets/images/badges/SZU.jpg
-  position: Research Intern
-  date: May. 2024 - present
+# - name: Institute of Computer Vision, Shenzhen University, Shenzhen, China
+#   logo: /assets/images/badges/SZU.jpg
+#   position: Research Intern
+#   date: May. 2024 - present
 
 # awards:
 # - name: Award Name 2
