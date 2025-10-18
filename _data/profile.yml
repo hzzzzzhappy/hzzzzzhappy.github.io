@@ -34,6 +34,11 @@ short_bio: >-
 #   date: Sep. 2023 - present
 
 experience:
+- name: Signal, Information, and Biological System Processing Laboratory, Audencia, Nantes, France
+  logo: /assets/images/badges/SZU.jpg
+  position: Founder
+  date: Aug. 2025 - present
+  
 - name: Eastern Institute of Technology (EIT), Ningbo, China
   logo: /assets/images/badges/EIT.jpg
   position: Research Intern
@@ -53,11 +58,3 @@ experience:
   logo: /assets/images/badges/Audenica.png
   position: Undergraduate Student
   date: Sep. 2023 - present
-
-# awards:
-# - name: Award Name 2
-#   date: 2024
-# - name: Award Name 1 
-#   date: 2021
-# - name: A quick brown fox jumps over the lazy dog and runs away award
-#   date: 2021
