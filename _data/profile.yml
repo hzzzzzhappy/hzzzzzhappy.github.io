@@ -35,26 +35,26 @@ short_bio: >-
 
 experience:
 - name: Signal, Information, and Biological System Processing Laboratory, Audencia, Nantes, France
-  # logo: /assets/images/badges/SZU.jpg
+  logo: /assets/images/badges/SZU.jpg
   position: Founder
   date: Aug. 2025 - present
   
 - name: Eastern Institute of Technology (EIT), Ningbo, China
-  # logo: /assets/images/badges/EIT.jpg
+  logo: /assets/images/badges/EIT.jpg
   position: Research Intern
   date: May. 2025 - Sep. 2025
   
 - name: Institute of Computer Vision, Shenzhen University, Shenzhen, China
-  # logo: /assets/images/badges/SZU.jpg
+  logo: /assets/images/badges/SZU.jpg
   position: Research Intern
   date: May. 2024 - present
 
 - name: Shenzhen University, Shenzhen, China
-  # logo: /assets/images/badges/SZU.jpg
+  logo: /assets/images/badges/SZU.jpg
   position: Undergraduate Student
   date: Sep. 2023 - present
   
 - name: Audencia Business School, Nantes, France
-  # logo: /assets/images/badges/Audenica.png
+  logo: /assets/images/badges/Audenica.png
   position: Undergraduate Student
   date: Sep. 2023 - present
