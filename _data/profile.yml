@@ -20,18 +20,18 @@ github: hzzzzzhappy
 short_bio_text_justify: false
 short_bio: >-
   <p>Since September 2023, I am a student at Shenzhen University and the Shenzhen Audencia Institute in France, pursuing a B.S. in Management (Information Management & Information Systems) and a B.S. in Blockchain Information Systems respectively. Since May 2024, I am a research assistant at the Shenzhen University Computer Vision Institute, under Dr. Can Gao and Dr. Jinbao Wang. Since March 2025, I am a research assistant at the Eastern Institute of Technology, under Dr. Xin Jin and Dr. Wenjun Zeng. Since September 2025, I am a research assistant at the Shanghai Artificial Intelligence Laboratory, under Dr. Aoran Wang and Dr. Shixiang Tang.</p>
-education:
-- name: Shenzhen University, Shenzhen, China
-  logo: /assets/images/badges/SZU.jpg
-  position: >- 
-    Undergraduate Student
-  date: Sep. 2023 - present
+# education:
+# - name: Shenzhen University, Shenzhen, China
+#   logo: /assets/images/badges/SZU.jpg
+#   position: >- 
+#     Undergraduate Student
+#   date: Sep. 2023 - present
   
-- name: Audencia Business School, Nantes, France
-  logo: /assets/images/badges/Audenica.png
-  position: >-
-    Undergraduate Student
-  date: Sep. 2023 - present
+# - name: Audencia Business School, Nantes, France
+#   logo: /assets/images/badges/Audenica.png
+#   position: >-
+#     Undergraduate Student
+#   date: Sep. 2023 - present
 
 # experience:
 # - name: Shanghai Artificial Intelligence Laboratory, Shanghai, China
