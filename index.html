@@ -6,32 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Hanzhe Liang (梁涵喆) 的个人主页">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* === 论文条目左右排布局 === */
+    .pub-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .pub-cover img {
+      width: 120px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #e2e2e2;
+    }
+    .pub-info h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+    }
+    .pub-info p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    /* 手机端自动变为上下排 */
+    @media (max-width: 600px) {
+      .pub-item {
+        flex-direction: column;
+      }
+      .pub-cover img {
+        width: 100%;
+      }
+    }
+
+    /* === 缩小访客地图 === */
+    #visitor-map {
+      width: 70%;
+      margin: 20px auto;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <div class="page">
+
     <!-- 顶部 -->
     <header class="header">
       <div class="avatar">
-        <!-- 以后如果有头像，可以把占位符换成 <img src="avatar.jpg" alt="Hanzhe Liang"> -->
         <div class="avatar-placeholder">梁</div>
       </div>
       <div class="header-text">
         <h1>Hanzhe Liang <span class="name-zh">(梁涵喆)</span></h1>
-        <p class="subtitle">
-          3D Anomaly Detection · Spatial Intelligence · Drug Repurposing
-        </p>
+        <p class="subtitle">3D Anomaly Detection · Spatial Intelligence · Drug Repurposing</p>
         <p class="location">Shenzhen, China</p>
         <div class="links">
-          <!-- 邮箱：这里用的是你主页上写的形式，域名如果其实是 .cn 记得自己改一下 -->
-          <a href="mailto:2023362051@email.szu.edu.com">
-            📧 2023362051(at)email.szu.edu.com
-          </a>
-          <a href="https://scholar.google.com/citations?user=pOL7KVkAAAAJ" target="_blank" rel="noreferrer">
-            🎓 Google Scholar
-          </a>
-          <a href="https://github.com/hzzzzzhappy" target="_blank" rel="noreferrer">
-            🐙 GitHub
-          </a>
+          <a href="mailto:2023362051@email.szu.edu.com">📧 Email</a>
+          <a href="https://scholar.google.com/citations?user=pOL7KVkAAAAJ">🎓 Google Scholar</a>
+          <a href="https://github.com/hzzzzzhappy">🐙 GitHub</a>
         </div>
       </div>
     </header>
@@ -41,23 +73,18 @@
       <section class="card">
         <h2>关于我</h2>
         <p>
-          我是梁涵喆，2005 年出生于长沙（湖南省）。目前的研究兴趣集中在 
-          <strong>3D 异常检测</strong> 与 <strong>空间智能</strong>，博士阶段会主要围绕
-          <strong>药物再利用与重定位</strong> 展开研究。
+          我是梁涵喆，2005 年出生于长沙，目前研究集中在 <strong>3D 异常检测</strong>、
+          <strong>空间智能</strong> 与 <strong>药物再定位</strong>。
         </p>
         <p>
-          2023 年 9 月至 2026 年 6 月，我在深圳大学完成本科学业，并获得深圳大学理学学位
-          与南特商学院管理学学位（提前一年毕业）。本科期间，我在深圳大学计算机视觉研究所
-          开展科研工作，主要在高灿与王金宝老师指导下完成了多项与 3D AD 相关的工作。
+          2023-2026 于深圳大学获得理学学位与南特商学院管理学学位。曾在深圳大学计算机视觉研究所从事 3D AD 研究，
+          由高灿与王金宝老师指导。
         </p>
         <p>
-          2025 年，我在东方理工数字孪生院进修，进一步接触了 VLA 与空间智能方向的前沿进展，
-          由金鑫老师给予指导。
+          2025 就读于东方理工数字孪生学院，由金鑫老师指导，研究 VLA 与空间智能。
         </p>
         <p>
-          计划在 2026 年下半年加入
-          <strong>Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</strong>
-          攻读博士学位，非常期待在 3D 视觉、异常检测和药物相关方向展开合作与交流。
+          计划于 2026 年加入 <strong>MBZUAI</strong> 攻读博士学位。
         </p>
       </section>
 
@@ -65,124 +92,127 @@
       <section class="card">
         <h2>研究兴趣</h2>
         <ul>
-          <li>3D Anomaly Detection 与点云异常检测</li>
-          <li>Spatial Intelligence / 空间智能与数字孪生</li>
-          <li>Drug Repurposing &amp; Repositioning（药物再利用与重定位）</li>
+          <li>3D Anomaly Detection</li>
+          <li>Spatial Intelligence & Digital Twin</li>
+          <li>Drug Repurposing / Repositioning</li>
         </ul>
       </section>
 
-      <!-- 部分论文 / 工作：按时间从新到旧排序 -->
+      <!-- 论文列表（左右排版 + 按日期从新到旧） -->
       <section class="card">
-        <h2>部分论文 / 工作（Selected Publications）</h2>
-        <ul class="list">
+        <h2>部分论文 / 工作（按时间排序）</h2>
 
-          <!-- 1. RIF (2025-11-08) -->
-          <li>
-            <strong>A Lightweight 3D Anomaly Detection Method with Rotationally Invariant Features</strong><br>
-            Hanzhe Liang, Jie Zhou, Can Gao, Bingyang Guo, Jinbao Wang, Linlin Shen<br>
-            <em>Under review</em> · 2025-11-08<br>
-            <img src="/assets/images/publication/pr.png" alt="RIF cover" style="width:120px; margin-top:6px;">
-          </li>
+        <!-- 1. RIF -->
+        <div class="pub-item">
+          <div class="pub-cover">
+            <img src="/assets/images/publication/pr.png">
+          </div>
+          <div class="pub-info">
+            <h3>A Lightweight 3D Anomaly Detection Method with Rotationally Invariant Features</h3>
+            <p>Hanzhe Liang, Jie Zhou, Can Gao, Bingyang Guo, Jinbao Wang, Linlin Shen</p>
+            <p><em>Under review</em> · 2025-11-08</p>
+          </div>
+        </div>
 
-          <!-- 2. IEC3D-AD (2025-11-01) -->
-          <li>
-            <strong>IEC3D-AD: A 3D Dataset of Industrial Equipment Components for Unsupervised Point Cloud Anomaly Detection</strong><br>
-            Bingyang Guo, Hongjie Li, Ruiyun Yu✝, Hanzhe Liang, Jinbao Wang<br>
-            <em>Under review</em> · 2025-11-01<br>
-            <img src="/assets/images/publication/IEC3D-AD.png" alt="IEC3D-AD cover" style="width:120px; margin-top:6px;">
-          </li>
+        <!-- 2. IEC3D-AD -->
+        <div class="pub-item">
+          <div class="pub-cover">
+            <img src="/assets/images/publication/IEC3D-AD.png">
+          </div>
+          <div class="pub-info">
+            <h3>IEC3D-AD: Industrial Equipment Components Dataset for 3D AD</h3>
+            <p>Bingyang Guo, Hongjie Li, Ruiyun Yu✝, Hanzhe Liang, Jinbao Wang</p>
+            <p><em>Under review</em> · 2025-11-01</p>
+          </div>
+        </div>
 
-          <!-- 3. C3D-AD (2025-08-02) -->
-          <li>
-            <strong>C3D-AD: Toward Continual 3D Anomaly Detection via Kernel Attention with Learnable Advisor</strong><br>
-            Haoquan Lu, Hanzhe Liang, Jie Zhang, Chenxi Hu, Jinbao Wang, Can Gao<br>
-            <em>Under review</em> · 2025-08-02<br>
-            <img src="/assets/images/publication/C3D.png" alt="C3D-AD cover" style="width:120px; margin-top:6px;">
-          </li>
+        <!-- 3. C3D-AD -->
+        <div class="pub-item">
+          <div class="pub-cover">
+            <img src="/assets/images/publication/C3D.png">
+          </div>
+          <div class="pub-info">
+            <h3>C3D-AD: Continual 3D Anomaly Detection via Kernel Attention</h3>
+            <p>Haoquan Lu, Hanzhe Liang, Jie Zhang, Chenxi Hu, Jinbao Wang, Can Gao</p>
+            <p><em>Under review</em> · 2025-08-02</p>
+          </div>
+        </div>
 
-          <!-- 4. Fence Theorem (2025-07-20) -->
-          <li>
-            <strong>Fence Theorem: Towards Dual-Objective Semantic-Structure Isolation in Preprocessing Phase for 3D Anomaly Detection</strong><br>
-            Hanzhe Liang, Jie Zhou, Xuanxin Chen, Jinbao Wang✝, Can Gao✝<br>
-            <em>ICCV Workshop (oral)</em> · 2025-07-20<br>
-            <img src="/assets/images/publication/patch3d.png" alt="Fence Theorem cover" style="width:120px; margin-top:6px;">
-          </li>
+        <!-- 4. Fence Theorem -->
+        <div class="pub-item">
+          <div class="pub-cover">
+            <img src="/assets/images/publication/patch3d.png">
+          </div>
+          <div class="pub-info">
+            <h3>Fence Theorem: Dual-Objective Semantic-Structure Isolation</h3>
+            <p>Hanzhe Liang, Jie Zhou, Xuanxin Chen, Jinbao Wang✝, Can Gao✝</p>
+            <p><em>ICCV Workshop (oral)</em> · 2025-07-20</p>
+          </div>
+        </div>
 
-          <!-- 5. MM25 DUSNet (2025-07-04) -->
-          <li>
-            <strong>Taming Anomalies with Down-Up Sampling Networks: Group Center Preserving Reconstruction for 3D Anomaly Detection</strong><br>
-            Hanzhe Liang, Jie Zhang, Tao Dai, Linlin Shen, Jinbao Wang, Can Gao<br>
-            <em>MM25 (poster)</em> · 2025-07-04<br>
-            <img src="/assets/images/publication/MMDUS.png" alt="MM25 DUSNet cover" style="width:120px; margin-top:6px;">
-          </li>
+        <!-- 5. DUSNet / MM25 -->
+        <div class="pub-item">
+          <div class="pub-cover">
+            <img src="/assets/images/publication/MMDUS.png">
+          </div>
+          <div class="pub-info">
+            <h3>Taming Anomalies with Down-Up Sampling Networks</h3>
+            <p>Hanzhe Liang, Jie Zhang, Tao Dai, Linlin Shen, Jinbao Wang, Can Gao</p>
+            <p><em>MM25 (poster)</em> · 2025-07-04</p>
+          </div>
+        </div>
 
-          <!-- 6. MC4AD (2025-05-13) -->
-          <li>
-            <strong>Examining the Source of Defects from a Mechanical Perspective for 3D Anomaly Detection</strong><br>
-            Hanzhe Liang, Aoran Wang, Jie Zhou, Xin Jin, Can Gao, Jinbao Wang<br>
-            <em>Under review</em> · 2025-05-13<br>
-            <img src="/assets/images/publication/MC4AD.png" alt="MC4AD cover" style="width:120px; margin-top:6px;">
-          </li>
+        <!-- 6. MC4AD -->
+        <div class="pub-item">
+          <div class="pub-cover">
+            <img src="/assets/images/publication/MC4AD.png">
+          </div>
+          <div class="pub-info">
+            <h3>Examining the Source of Defects for 3D Anomaly Detection</h3>
+            <p>Hanzhe Liang, Aoran Wang, Jie Zhou, Xin Jin, Can Gao, Jinbao Wang</p>
+            <p><em>Under review</em> · 2025-05-13</p>
+          </div>
+        </div>
 
-          <!-- 7. ISMP / AAAI25 (2025-01-01) -->
-          <li>
-            <strong>Look Inside for More: Internal Spatial Modality Perception for 3D Anomaly Detection</strong><br>
-            Hanzhe Liang, Guoyang Xie, Chengbin Hou, Bingshu Wang, Can Gao✝, Jinbao Wang✝<br>
-            <em>AAAI25 (poster)</em> · 2025-01-01<br>
-            <img src="/assets/images/publication/AAAI25ISMP.png" alt="AAAI25 ISMP cover" style="width:120px; margin-top:6px;">
-          </li>
+        <!-- 7. AAAI25 ISMP -->
+        <div class="pub-item">
+          <div class="pub-cover">
+            <img src="/assets/images/publication/AAAI25ISMP.png">
+          </div>
+          <div class="pub-info">
+            <h3>Look Inside for More: Internal Spatial Modality Perception</h3>
+            <p>Hanzhe Liang, Guoyang Xie, Chengbin Hou, Bingshu Wang, Can Gao✝, Jinbao Wang✝</p>
+            <p><em>AAAI25 (poster)</em> · 2025-01-01</p>
+          </div>
+        </div>
 
-        </ul>
-
-        <p class="more-link">
-          更多论文请见
-          <a href="https://hzzzzzhappy.github.io/publications.html" target="_blank" rel="noreferrer">
-            Publications 页面
-          </a>
-          或 <a href="https://scholar.google.com/citations?user=pOL7KVkAAAAJ" target="_blank" rel="noreferrer">
-            Google Scholar
-          </a>。
-        </p>
       </section>
 
       <!-- 联系方式 -->
       <section class="card">
         <h2>联系我</h2>
-        <p>
-          如果你对 3D 异常检测、空间智能或者药物再利用方向感兴趣，欢迎发邮件给我，
-          或通过 Google Scholar / GitHub 与我取得联系。
-        </p>
         <ul>
           <li><strong>Email：</strong>2023362051(at)email.szu.edu.com</li>
-          <li><strong>Google Scholar：</strong>
-            <a href="https://scholar.google.com/citations?user=pOL7KVkAAAAJ" target="_blank" rel="noreferrer">
-              scholar.google.com/citations?user=pOL7KVkAAAAJ
-            </a>
-          </li>
-          <li><strong>GitHub：</strong>
-            <a href="https://github.com/hzzzzzhappy" target="_blank" rel="noreferrer">
-              github.com/hzzzzzhappy
-            </a>
-          </li>
+          <li><strong>Google Scholar：</strong> scholar.google.com/citations?user=pOL7KVkAAAAJ</li>
+          <li><strong>GitHub：</strong> github.com/hzzzzzhappy</li>
         </ul>
       </section>
     </main>
 
+    <!-- Visitor map (缩小版本) -->
+    <div id="visitor-map">
+      <script type="text/javascript" id="mapmyvisitors"
+              src="//mapmyvisitors.com/map.js?d=Qf0-0Dcg0-zjC7e0F6JzQ-7kWusX8IW-uDD13lGsem4&cl=ffffff&w=a">
+      </script>
+    </div>
+
     <footer class="footer">
       <p>© <span id="year"></span> Hanzhe Liang (梁涵喆)</p>
       <p class="footer-note">This is a minimal static homepage powered by GitHub Pages.</p>
-      <!-- Visitor Map -->
-<div style="margin-top: 20px; text-align: center;">
-  <script type="text/javascript" id="mapmyvisitors" 
-          src="//mapmyvisitors.com/map.js?d=Qf0-0Dcg0-zjC7e0F6JzQ-7kWusX8IW-uDD13lGsem4&cl=ffffff&w=a">
-  </script>
-</div>
-
     </footer>
   </div>
 
   <script>
-    // 自动显示当前年份
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
