@@ -12,7 +12,7 @@
     .pub-item {
       display: flex;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       align-items: flex-start;
     }
     .pub-cover img {
@@ -30,6 +30,7 @@
       font-size: 14px;
       line-height: 1.5;
     }
+
     /* 手机端自动变为上下排 */
     @media (max-width: 600px) {
       .pub-item {
@@ -40,30 +41,28 @@
       }
     }
 
-    /* === 缩小访客地图 === */
+    /* === 缩小访客地图（非常小） === */
     #visitor-map {
-      width: 30%;
+      width: 20%;        /* ←你想再小可以改成 15% 或 10% */
       margin: 20px auto;
       text-align: center;
     }
   </style>
 </head>
+
 <body>
   <div class="page">
 
     <!-- 顶部 -->
     <header class="header">
-      <div class="avatar">
-        <div class="avatar-placeholder">梁</div>
-      </div>
       <div class="header-text">
         <h1>Hanzhe Liang <span class="name-zh">(梁涵喆)</span></h1>
         <p class="subtitle">3D Anomaly Detection · Spatial Intelligence · Drug Repurposing</p>
         <p class="location">Shenzhen, China</p>
         <div class="links">
           <a href="mailto:2023362051@email.szu.edu.com">📧 Email</a>
-          <a href="https://scholar.google.com/citations?user=pOL7KVkAAAAJ">🎓 Google Scholar</a>
-          <a href="https://github.com/hzzzzzhappy">🐙 GitHub</a>
+          <a href="https://scholar.google.com/citations?user=pOL7KVkAAAAJ" target="_blank">🎓 Google Scholar</a>
+          <a href="https://github.com/hzzzzzhappy" target="_blank">🐙 GitHub</a>
         </div>
       </div>
     </header>
@@ -71,20 +70,34 @@
     <!-- 关于我 -->
     <main>
       <section class="card">
-        <h2>关于我</h2>
-        <p>
-          我是梁涵喆，2005年生于仲春的长沙（中国湖南省）。我的研究兴趣包括3D异常检测和空间智能，我的博士研究方向是药物再利用和重定位。
-        </p>
-        <p>
-          在2023年9月至2026年6月，我在深圳度过了我的本科生活，获得了深圳大学理学与南特商学院管理学双学位，我提前了一年毕业。
-       </p>
-        <p>   
-          在这期间，我在深圳大学计算机视觉研究所工作，我的很多论文都产自这里，受监督于高灿和王金宝老师；此外，2025年我在东方理工数字孪生院进修了一段时间，了解了关于VLA和空间智能的最新进展，受监督于金鑫老师。
-        </p>
-        <p>
-          我计划在2026年下半年加入 Mohamed bin Zayed University of Artificial Intelligence, MBZUAI 以攻读我的博士学位，任何合作和沟通都会被期待。
-        </p>
-      </section>
+  <h2>关于我</h2>
+
+  <p>
+    我是梁涵喆，2005 年生于仲春的长沙（中国湖南省）。我的研究兴趣包括 
+    <strong>3D 异常检测（3D Anomaly Detection）</strong> 和 
+    <strong>空间智能（Spatial Intelligence）</strong>，博士阶段计划专注于 
+    <strong>药物再利用与重定位（Drug Repurposing & Repositioning）</strong>。
+  </p>
+
+  <p>
+    2023 年 9 月至 2026 年 6 月，我在深圳完成了本科学习，获得了 
+    <strong>深圳大学理学学位</strong> 与 <strong>南特商学院管理学双学位</strong>，并提前一年毕业。
+  </p>
+
+  <p>
+    在此期间，我在深圳大学计算机视觉研究所从事科研工作，许多论文也诞生于此，
+    师从 <strong>高灿</strong> 与 <strong>王金宝</strong> 老师。
+    2025 年，我在东方理工大学数字孪生学院进修一段时间，学习了关于 
+    <strong>VLA</strong> 和 <strong>空间智能</strong> 的最新进展，受监督于 <strong>金鑫</strong> 老师。
+  </p>
+
+  <p>
+    我计划于 2026 年下半年加入 
+    <strong>Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</strong> 
+    攻读博士学位，期待在 3D 视觉、异常检测与药物相关领域开展合作与交流。
+  </p>
+</section>
+
 
       <!-- 研究兴趣 -->
       <section class="card">
@@ -96,15 +109,15 @@
         </ul>
       </section>
 
-      <!-- 论文列表（左右排版 + 按日期从新到旧） -->
+      <!-- 论文列表（左右排 + 按日期排序） -->
       <section class="card">
-        <h2>出版物</h2>
+        <h2>出版物（按时间排序）</h2>
+
+        <!-- === 每条论文 === -->
 
         <!-- 1. RIF -->
         <div class="pub-item">
-          <div class="pub-cover">
-            <img src="/assets/images/publication/pr.png">
-          </div>
+          <div class="pub-cover"><img src="/assets/images/publication/pr.png"></div>
           <div class="pub-info">
             <h3>A Lightweight 3D Anomaly Detection Method with Rotationally Invariant Features</h3>
             <p>Hanzhe Liang, Jie Zhou, Can Gao, Bingyang Guo, Jinbao Wang, Linlin Shen</p>
@@ -114,9 +127,7 @@
 
         <!-- 2. IEC3D-AD -->
         <div class="pub-item">
-          <div class="pub-cover">
-            <img src="/assets/images/publication/IEC3D-AD.png">
-          </div>
+          <div class="pub-cover"><img src="/assets/images/publication/IEC3D-AD.png"></div>
           <div class="pub-info">
             <h3>IEC3D-AD: Industrial Equipment Components Dataset for 3D AD</h3>
             <p>Bingyang Guo, Hongjie Li, Ruiyun Yu✝, Hanzhe Liang, Jinbao Wang</p>
@@ -126,9 +137,7 @@
 
         <!-- 3. C3D-AD -->
         <div class="pub-item">
-          <div class="pub-cover">
-            <img src="/assets/images/publication/C3D.png">
-          </div>
+          <div class="pub-cover"><img src="/assets/images/publication/C3D.png"></div>
           <div class="pub-info">
             <h3>C3D-AD: Continual 3D Anomaly Detection via Kernel Attention</h3>
             <p>Haoquan Lu, Hanzhe Liang, Jie Zhang, Chenxi Hu, Jinbao Wang, Can Gao</p>
@@ -138,9 +147,7 @@
 
         <!-- 4. Fence Theorem -->
         <div class="pub-item">
-          <div class="pub-cover">
-            <img src="/assets/images/publication/patch3d.png">
-          </div>
+          <div class="pub-cover"><img src="/assets/images/publication/patch3d.png"></div>
           <div class="pub-info">
             <h3>Fence Theorem: Dual-Objective Semantic-Structure Isolation</h3>
             <p>Hanzhe Liang, Jie Zhou, Xuanxin Chen, Jinbao Wang✝, Can Gao✝</p>
@@ -148,11 +155,9 @@
           </div>
         </div>
 
-        <!-- 5. DUSNet / MM25 -->
+        <!-- 5. MM25 – DUSNet -->
         <div class="pub-item">
-          <div class="pub-cover">
-            <img src="/assets/images/publication/MMDUS.png">
-          </div>
+          <div class="pub-cover"><img src="/assets/images/publication/MMDUS.png"></div>
           <div class="pub-info">
             <h3>Taming Anomalies with Down-Up Sampling Networks</h3>
             <p>Hanzhe Liang, Jie Zhang, Tao Dai, Linlin Shen, Jinbao Wang, Can Gao</p>
@@ -162,9 +167,7 @@
 
         <!-- 6. MC4AD -->
         <div class="pub-item">
-          <div class="pub-cover">
-            <img src="/assets/images/publication/MC4AD.png">
-          </div>
+          <div class="pub-cover"><img src="/assets/images/publication/MC4AD.png"></div>
           <div class="pub-info">
             <h3>Examining the Source of Defects for 3D Anomaly Detection</h3>
             <p>Hanzhe Liang, Aoran Wang, Jie Zhou, Xin Jin, Can Gao, Jinbao Wang</p>
@@ -172,11 +175,9 @@
           </div>
         </div>
 
-        <!-- 7. AAAI25 ISMP -->
+        <!-- 7. AAAI25 – ISMP -->
         <div class="pub-item">
-          <div class="pub-cover">
-            <img src="/assets/images/publication/AAAI25ISMP.png">
-          </div>
+          <div class="pub-cover"><img src="/assets/images/publication/AAAI25ISMP.png"></div>
           <div class="pub-info">
             <h3>Look Inside for More: Internal Spatial Modality Perception</h3>
             <p>Hanzhe Liang, Guoyang Xie, Chengbin Hou, Bingshu Wang, Can Gao✝, Jinbao Wang✝</p>
@@ -197,7 +198,7 @@
       </section>
     </main>
 
-    <!-- Visitor map (缩小版本) -->
+    <!-- 访客地图（已缩小） -->
     <div id="visitor-map">
       <script type="text/javascript" id="mapmyvisitors"
               src="//mapmyvisitors.com/map.js?d=Qf0-0Dcg0-zjC7e0F6JzQ-7kWusX8IW-uDD13lGsem4&cl=ffffff&w=a">
