@@ -7,19 +7,27 @@
   <meta name="description" content="Hanzhe Liang Personal Homepage">
 
   <style>
-    /* Overall page centered */
+    body {
+      background: #f8f6f2; /* 米白色背景 */
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+
+    /* Page center container */
     .page {
-      max-width: 760px;
+      max-width: 850px;  /* 改为你要的宽度 */
       margin: 0 auto;
-      padding: 0 16px;
+      padding: 0 18px;
     }
 
     .card {
       background: #fff;
-      padding: 20px;
-      margin: 24px 0;
+      padding: 22px;
+      margin: 26px 0;
       border-radius: 8px;
       border: 1px solid #e5e5e5;
+      text-align: left;
     }
 
     .card h2 {
@@ -29,7 +37,7 @@
 
     .header {
       text-align: center;
-      padding: 30px 0 10px;
+      padding: 40px 0 15px;
     }
     .header-text h1 {
       margin: 0;
@@ -37,6 +45,8 @@
     }
     .links a {
       margin-right: 10px;
+      text-decoration: none;
+      color: #3366cc;
     }
 
     /* Publications */
@@ -47,9 +57,9 @@
       align-items: flex-start;
     }
     .pub-cover img {
-      width: 120px;
+      width: 130px;
       border-radius: 8px;
-      border: 1px solid #e2e2e2;
+      border: 1px solid #ddd;
     }
     .pub-info h3 {
       margin: 0 0 4px;
@@ -57,7 +67,6 @@
       font-weight: normal;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       .pub-item { flex-direction: column; }
       .pub-cover img { width: 100%; }
@@ -68,7 +77,6 @@
     .vertical-timeline {
       position: relative;
       margin: 30px 0;
-      padding: 0;
     }
 
     /* middle axis */
@@ -79,7 +87,7 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: #e2e2e2;
+      background: #dcdcdc;
       transform: translateX(-1px);
     }
 
@@ -87,20 +95,20 @@
       position: relative;
       width: 50%;
       padding: 10px 20px;
-      box-sizing: border-box;
       margin-bottom: 26px;
+      box-sizing: border-box;
     }
 
-    /* node circle */
+    /* timeline circle */
     .vt-item::before {
       content: "";
       position: absolute;
-      top: 10px;
+      top: 8px;
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: #ffffff;
-      border: 2px solid #999999;
+      background: #fff;
+      border: 2px solid #999;
       z-index: 2;
     }
 
@@ -134,15 +142,14 @@
       font-size: 15px;
     }
 
-    /* Mobile timeline collapses */
+    /* Mobile layout */
     @media (max-width: 768px) {
-      .vertical-timeline::before { left: 10px; }
+      .vertical-timeline::before { left: 12px; }
       .vt-item {
         width: 100%;
         left: 0 !important;
         text-align: left !important;
-        padding-left: 40px;
-        padding-right: 10px;
+        padding-left: 42px;
       }
       .vt-item::before {
         left: 4px !important;
@@ -179,10 +186,10 @@
           I am Hanzhe Liang, born in 2005 in Changsha, Hunan, China. My research interests include 3D anomaly detection and spatial intelligence, and my doctoral research will focus on drug repurposing and repositioning.
         </p>
         <p>
-          From 2023 to 2026, I completed my undergraduate studies in Shenzhen and earned a dual degree in Science from Shenzhen University and Management from Audencia Business School, graduating one year ahead of schedule.
+          From 2023 to 2026, I completed my undergraduate studies in Shenzhen and received a dual degree in Science from Shenzhen University and Management from Audencia Business School.
         </p>
         <p>
-          I conducted research at the Computer Vision Institute of Shenzhen University and later at the Digital Twin Institute of East Tech University, focusing on 3D vision and spatial intelligence.
+          I conducted research at the Computer Vision Institute of Shenzhen University and later at the Digital Twin Institute of East Tech University.
         </p>
         <p>
           I will join the Mohamed bin Zayed University of Artificial Intelligence (MBZUAI) as a Ph.D. student in 2026.
@@ -205,28 +212,25 @@
 
         <div class="vertical-timeline">
 
-          <!-- LEFT: PhD -->
+          <!-- newest top -->
           <div class="vt-item vt-left">
             <p class="vt-date">2026 (expected)</p>
             <p class="vt-title">Ph.D. Study at MBZUAI</p>
           </div>
 
-          <!-- RIGHT: Research 2 -->
           <div class="vt-item vt-right">
             <p class="vt-date">2025 – 2026</p>
-            <p class="vt-title">Research Assistant, Digital Twin Institute, East Tech University</p>
+            <p class="vt-title">Research, Digital Twin Institute, East Tech University</p>
           </div>
 
-          <!-- RIGHT: Research 1 -->
           <div class="vt-item vt-right">
             <p class="vt-date">2023 – 2025</p>
-            <p class="vt-title">Research Assistant, Computer Vision Institute, Shenzhen University</p>
+            <p class="vt-title">Undergraduate Research, Computer Vision Institute, Shenzhen University</p>
           </div>
 
-          <!-- LEFT: Undergraduate -->
           <div class="vt-item vt-left">
             <p class="vt-date">2023 – 2026</p>
-            <p class="vt-title">Undergraduate Student, Shenzhen University & Audencia</p>
+            <p class="vt-title">Dual Degree Undergraduate (SZU & Audencia)</p>
           </div>
 
         </div>
@@ -313,7 +317,7 @@
 
     </main>
 
-    <footer class="footer" style="text-align:center; padding:20px 0; color:#666;">
+    <footer class="footer" style="text-align:center; padding:22px 0; color:#555;">
       <p>© <span id="year"></span> Hanzhe Liang</p>
       <p>Minimal academic homepage powered by GitHub Pages.</p>
     </footer>
