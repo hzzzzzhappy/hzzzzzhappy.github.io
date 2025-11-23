@@ -1,11 +1,66 @@
-    /* Center Timeline (左右交错) */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hanzhe Liang - Personal Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hanzhe Liang Personal Homepage">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .pub-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+      align-items: flex-start;
+    }
+    .pub-cover img {
+      width: 120px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #e2e2e2;
+    }
+    .pub-info h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .pub-info p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .pub-item {
+        flex-direction: column;
+      }
+      .pub-cover img {
+        width: 100%;
+      }
+    }
+
+    #visitor-map {
+      width: 20%;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .card h2 {
+      font-weight: normal;
+    }
+    .header-text h1 {
+      font-weight: normal;
+    }
+
+    /* Center timeline: one axis, left/right layout */
     .vertical-timeline {
       position: relative;
       margin: 30px 0;
-      padding: 0 0 0 0;
+      padding: 0;
     }
 
-    /* 中间轴线 */
+    /* Middle axis */
     .vertical-timeline::before {
       content: "";
       position: absolute;
@@ -25,7 +80,7 @@
       margin-bottom: 25px;
     }
 
-    /* 事件点 */
+    /* Node circle */
     .vt-item::before {
       content: "";
       position: absolute;
@@ -33,12 +88,12 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: #fff;
-      border: 2px solid #999;
+      background: #ffffff;
+      border: 2px solid #999999;
       z-index: 2;
     }
 
-    /* 左侧 */
+    /* Left side: education */
     .vt-left {
       left: 0;
       text-align: right;
@@ -48,7 +103,7 @@
       right: -6px;
     }
 
-    /* 右侧 */
+    /* Right side: research */
     .vt-right {
       left: 50%;
       text-align: left;
@@ -61,29 +116,217 @@
     .vt-date {
       margin: 0;
       font-size: 13px;
-      color: #666;
+      color: #666666;
     }
 
     .vt-title {
       margin: 2px 0 0;
       font-size: 15px;
-      color: #333;
+      color: #333333;
     }
 
-    /* 移动端合并为单列 */
+    /* Mobile: collapse to single column */
     @media (max-width: 768px) {
       .vertical-timeline::before {
-        left: 6px;
+        left: 10px;
       }
       .vt-item {
         width: 100%;
-        text-align: left !important;
+        left: 0 !important;
+        text-align: left;
         padding-left: 40px;
-      }
-      .vt-left, .vt-right {
-        left: 0;
+        padding-right: 10px;
       }
       .vt-item::before {
-        left: 0 !important;
+        left: 4px !important;
+        right: auto !important;
       }
     }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-text">
+        <h1>Hanzhe Liang</h1>
+        <p class="subtitle">3D Anomaly Detection · Spatial Intelligence · Drug Repurposing</p>
+        <p class="location">Shenzhen, China</p>
+        <div class="links">
+          <a href="mailto:2023362051@email.szu.edu.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=pOL7KVkAAAAJ" target="_blank">Google Scholar</a>
+          <a href="https://github.com/hzzzzzhappy" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <!-- About Me -->
+      <section class="card">
+        <h2>About Me</h2>
+        <p>
+          I am Hanzhe Liang, born in 2005 in Changsha, Hunan, China. My research interests include 3D anomaly detection and spatial intelligence, and my doctoral research will focus on drug repurposing and repositioning.
+        </p>
+        <p>
+          From September 2023 to June 2026, I completed my undergraduate studies in Shenzhen and earned a dual degree in Science from Shenzhen University and Management from Audencia Business School, graduating one year ahead of schedule.
+        </p>
+        <p>
+          During this period, I conducted research at the Computer Vision Institute of Shenzhen University under the supervision of Can Gao and Jinbao Wang. In 2025, I studied at the Digital Twin Institute of East Tech University, where I explored recent advances in VLA and spatial intelligence under the guidance of Xin Jin.
+        </p>
+        <p>
+          I will join the Mohamed bin Zayed University of Artificial Intelligence (MBZUAI) as a Ph.D. student in late 2026. I welcome collaborations in 3D vision, anomaly detection, spatial intelligence, and computational drug discovery.
+        </p>
+      </section>
+
+      <!-- Research Interests -->
+      <section class="card">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>3D Anomaly Detection</li>
+          <li>Spatial Intelligence and Digital Twin</li>
+          <li>Drug Repurposing and Repositioning</li>
+        </ul>
+      </section>
+
+      <!-- Timeline: one axis, left = education, right = research -->
+      <section class="card">
+        <h2>Timeline</h2>
+        <div class="vertical-timeline">
+
+          <!-- Left: Education -->
+          <div class="vt-item vt-left">
+            <p class="vt-date">2023 – 2026</p>
+            <p class="vt-title">Dual Degree Undergraduate (Shenzhen University & Audencia Business School)</p>
+          </div>
+
+          <!-- Right: Research 1 -->
+          <div class="vt-item vt-right">
+            <p class="vt-date">2023 – 2025</p>
+            <p class="vt-title">Undergraduate Research, Computer Vision Institute, Shenzhen University</p>
+          </div>
+
+          <!-- Right: Research 2 -->
+          <div class="vt-item vt-right">
+            <p class="vt-date">2025 – 2026</p>
+            <p class="vt-title">Research, Digital Twin Institute, East Tech University</p>
+          </div>
+
+          <!-- Left: Future PhD -->
+          <div class="vt-item vt-left">
+            <p class="vt-date">2026 (expected)</p>
+            <p class="vt-title">Ph.D. Study at MBZUAI</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Publications -->
+      <section class="card">
+        <h2>Selected Publications (Ordered by Date)</h2>
+
+        <!-- 1. RIF -->
+        <div class="pub-item">
+          <div class="pub-cover"><img src="/assets/images/publication/pr.png" alt="RIF cover"></div>
+          <div class="pub-info">
+            <h3>A Lightweight 3D Anomaly Detection Method with Rotationally Invariant Features</h3>
+            <p>Hanzhe Liang, Jie Zhou, Can Gao, Bingyang Guo, Jinbao Wang, Linlin Shen</p>
+            <p>Under review · 2025-11-08</p>
+          </div>
+        </div>
+
+        <!-- 2. IEC3D-AD -->
+        <div class="pub-item">
+          <div class="pub-cover"><img src="/assets/images/publication/IEC3D-AD.png" alt="IEC3D-AD cover"></div>
+          <div class="pub-info">
+            <h3>IEC3D-AD: Industrial Equipment Components Dataset for 3D Anomaly Detection</h3>
+            <p>Bingyang Guo, Hongjie Li, Ruiyun Yu, Hanzhe Liang, Jinbao Wang</p>
+            <p>Under review · 2025-11-01</p>
+          </div>
+        </div>
+
+        <!-- 3. C3D-AD -->
+        <div class="pub-item">
+          <div class="pub-cover"><img src="/assets/images/publication/C3D.png" alt="C3D-AD cover"></div>
+          <div class="pub-info">
+            <h3>C3D-AD: Continual 3D Anomaly Detection via Kernel Attention</h3>
+            <p>Haoquan Lu, Hanzhe Liang, Jie Zhang, Chenxi Hu, Jinbao Wang, Can Gao</p>
+            <p>Under review · 2025-08-02</p>
+          </div>
+        </div>
+
+        <!-- 4. Fence Theorem -->
+        <div class="pub-item">
+          <div class="pub-cover"><img src="/assets/images/publication/patch3d.png" alt="Fence Theorem cover"></div>
+          <div class="pub-info">
+            <h3>Fence Theorem: Dual-Objective Semantic-Structure Isolation in Preprocessing for 3D Anomaly Detection</h3>
+            <p>Hanzhe Liang, Jie Zhou, Xuanxin Chen, Jinbao Wang, Can Gao</p>
+            <p>ICCV Workshop (oral) · 2025-07-20</p>
+          </div>
+        </div>
+
+        <!-- 5. MM25 DUSNet -->
+        <div class="pub-item">
+          <div class="pub-cover"><img src="/assets/images/publication/MMDUS.png" alt="DUSNet cover"></div>
+          <div class="pub-info">
+            <h3>Taming Anomalies with Down-Up Sampling Networks</h3>
+            <p>Hanzhe Liang, Jie Zhang, Tao Dai, Linlin Shen, Jinbao Wang, Can Gao</p>
+            <p>MM25 (poster) · 2025-07-04</p>
+          </div>
+        </div>
+
+        <!-- 6. MC4AD -->
+        <div class="pub-item">
+          <div class="pub-cover"><img src="/assets/images/publication/MC4AD.png" alt="MC4AD cover"></div>
+          <div class="pub-info">
+            <h3>Examining the Source of Defects for 3D Anomaly Detection</h3>
+            <p>Hanzhe Liang, Aoran Wang, Jie Zhou, Xin Jin, Can Gao, Jinbao Wang</p>
+            <p>Under review · 2025-05-13</p>
+          </div>
+        </div>
+
+        <!-- 7. AAAI25 -->
+        <div class="pub-item">
+          <div class="pub-cover"><img src="/assets/images/publication/AAAI25ISMP.png" alt="AAAI25 cover"></div>
+          <div class="pub-info">
+            <h3>Look Inside for More: Internal Spatial Modality Perception</h3>
+            <p>Hanzhe Liang, Guoyang Xie, Chengbin Hou, Bingshu Wang, Can Gao, Jinbao Wang</p>
+            <p>AAAI25 (poster) · 2025-01-01</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Contact -->
+      <section class="card">
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: 2023362051(at)email.szu.edu.com</li>
+          <li>Google Scholar: scholar.google.com/citations?user=pOL7KVkAAAAJ</li>
+          <li>GitHub: github.com/hzzzzzhappy</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Visitor Map -->
+    <div id="visitor-map">
+      <script type="text/javascript" id="mapmyvisitors"
+              src="//mapmyvisitors.com/map.js?d=Qf0-0Dcg0-zjC7e0F6JzQ-7kWusX8IW-uDD13lGsem4&cl=ffffff&w=a">
+      </script>
+    </div>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Hanzhe Liang</p>
+      <p class="footer-note">Minimal academic homepage powered by GitHub Pages.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
