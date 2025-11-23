@@ -53,17 +53,17 @@
       font-weight: normal;
     }
 
-    /* Timeline */
+    /* Timeline 基础样式 */
     .timeline {
       position: relative;
-      margin: 20px 0;
+      margin: 12px 0 0;
       padding-left: 20px;
       border-left: 2px solid #e2e2e2;
     }
 
     .timeline-item {
       position: relative;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       padding-left: 10px;
     }
 
@@ -82,12 +82,41 @@
     .timeline-date {
       font-size: 13px;
       color: #666666;
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
 
     .timeline-title {
       font-size: 15px;
       margin: 2px 0 0;
+    }
+
+    /* 两列布局 */
+    .timeline-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .timeline-column {
+      flex: 1 1 260px;
+      min-width: 0;
+    }
+
+    .timeline-column-title {
+      font-size: 15px;
+      margin: 0 0 4px;
+      font-weight: normal;
+      color: #333333;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-grid {
+        flex-direction: column;
+      }
+      .timeline-column {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
@@ -117,7 +146,7 @@
           I am Hanzhe Liang, born in 2005 in Changsha, China. My research interests include 3D anomaly detection, spatial intelligence, and computational drug discovery.
         </p>
         <p>
-          From 2023 to 2026, I completed my undergraduate studies in Shenzhen and received a dual degree in Science (Shenzhen University) and Management (Audencia Business School), graduating one year early.
+          From 2023 to 2026, I completed my undergraduate studies in Shenzhen and received a dual degree in Science from Shenzhen University and Management from Audencia Business School, graduating one year early.
         </p>
         <p>
           I conducted research at the Computer Vision Institute of Shenzhen University and later at the Digital Twin Institute of East Tech University. My future doctoral research will focus on drug repurposing and its connection to spatial intelligence.
@@ -134,29 +163,41 @@
         </ul>
       </section>
 
-      <!-- Timeline -->
+      <!-- Timeline：左教育 / 右研究 -->
       <section class="card">
         <h2>Timeline</h2>
-        <div class="timeline">
+        <div class="timeline-grid">
 
-          <div class="timeline-item">
-            <p class="timeline-date">2026 (expected)</p>
-            <p class="timeline-title">Begin Ph.D. Study at MBZUAI</p>
+          <!-- 左侧：教育经历 -->
+          <div class="timeline-column">
+            <p class="timeline-column-title">Education</p>
+            <div class="timeline">
+              <div class="timeline-item">
+                <p class="timeline-date">2023 – 2026</p>
+                <p class="timeline-title">Dual Degree Undergraduate (Shenzhen University & Audencia Business School)</p>
+              </div>
+
+              <div class="timeline-item">
+                <p class="timeline-date">2026 (expected)</p>
+                <p class="timeline-title">Ph.D. Study at MBZUAI</p>
+              </div>
+            </div>
           </div>
 
-          <div class="timeline-item">
-            <p class="timeline-date">2025 – 2026</p>
-            <p class="timeline-title">Research Experience at Digital Twin Institute, East Tech University</p>
-          </div>
+          <!-- 右侧：研究经历 -->
+          <div class="timeline-column">
+            <p class="timeline-column-title">Research Experience</p>
+            <div class="timeline">
+              <div class="timeline-item">
+                <p class="timeline-date">2023 – 2025</p>
+                <p class="timeline-title">Undergraduate Research, Computer Vision Institute, Shenzhen University</p>
+              </div>
 
-          <div class="timeline-item">
-            <p class="timeline-date">2023 – 2025</p>
-            <p class="timeline-title">Undergraduate Research at SZU Computer Vision Institute</p>
-          </div>
-
-          <div class="timeline-item">
-            <p class="timeline-date">2023 – 2026</p>
-            <p class="timeline-title">Dual Degree Undergraduate Program (SZU & Audencia)</p>
+              <div class="timeline-item">
+                <p class="timeline-date">2025 – 2026</p>
+                <p class="timeline-title">Research, Digital Twin Institute, East Tech University</p>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -166,8 +207,9 @@
       <section class="card">
         <h2>Selected Publications (Ordered by Date)</h2>
 
+        <!-- 1. RIF -->
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/pr.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/pr.png" alt="RIF cover"></div>
           <div class="pub-info">
             <h3>A Lightweight 3D Anomaly Detection Method with Rotationally Invariant Features</h3>
             <p>Hanzhe Liang, Jie Zhou, Can Gao, Bingyang Guo, Jinbao Wang, Linlin Shen</p>
@@ -175,8 +217,9 @@
           </div>
         </div>
 
+        <!-- 2. IEC3D-AD -->
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/IEC3D-AD.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/IEC3D-AD.png" alt="IEC3D-AD cover"></div>
           <div class="pub-info">
             <h3>IEC3D-AD: Industrial Equipment Components Dataset for 3D Anomaly Detection</h3>
             <p>Bingyang Guo, Hongjie Li, Ruiyun Yu, Hanzhe Liang, Jinbao Wang</p>
@@ -184,8 +227,9 @@
           </div>
         </div>
 
+        <!-- 3. C3D-AD -->
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/C3D.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/C3D.png" alt="C3D-AD cover"></div>
           <div class="pub-info">
             <h3>C3D-AD: Continual 3D Anomaly Detection via Kernel Attention</h3>
             <p>Haoquan Lu, Hanzhe Liang, Jie Zhang, Chenxi Hu, Jinbao Wang, Can Gao</p>
@@ -193,17 +237,19 @@
           </div>
         </div>
 
+        <!-- 4. Fence Theorem -->
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/patch3d.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/patch3d.png" alt="Fence Theorem cover"></div>
           <div class="pub-info">
-            <h3>Fence Theorem: Dual-Objective Semantic-Structure Isolation for 3D AD</h3>
+            <h3>Fence Theorem: Dual-Objective Semantic-Structure Isolation in Preprocessing for 3D Anomaly Detection</h3>
             <p>Hanzhe Liang, Jie Zhou, Xuanxin Chen, Jinbao Wang, Can Gao</p>
             <p>ICCV Workshop (oral) · 2025-07-20</p>
           </div>
         </div>
 
+        <!-- 5. MM25 DUSNet -->
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/MMDUS.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/MMDUS.png" alt="DUSNet cover"></div>
           <div class="pub-info">
             <h3>Taming Anomalies with Down-Up Sampling Networks</h3>
             <p>Hanzhe Liang, Jie Zhang, Tao Dai, Linlin Shen, Jinbao Wang, Can Gao</p>
@@ -211,8 +257,9 @@
           </div>
         </div>
 
+        <!-- 6. MC4AD -->
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/MC4AD.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/MC4AD.png" alt="MC4AD cover"></div>
           <div class="pub-info">
             <h3>Examining the Source of Defects for 3D Anomaly Detection</h3>
             <p>Hanzhe Liang, Aoran Wang, Jie Zhou, Xin Jin, Can Gao, Jinbao Wang</p>
@@ -220,8 +267,9 @@
           </div>
         </div>
 
+        <!-- 7. AAAI25 -->
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/AAAI25ISMP.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/AAAI25ISMP.png" alt="AAAI25 cover"></div>
           <div class="pub-info">
             <h3>Look Inside for More: Internal Spatial Modality Perception</h3>
             <p>Hanzhe Liang, Guoyang Xie, Chengbin Hou, Bingshu Wang, Can Gao, Jinbao Wang</p>
