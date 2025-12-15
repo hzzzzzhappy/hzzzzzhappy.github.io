@@ -1,187 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Hanzhe Liang - Personal Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Hanzhe Liang Personal Homepage">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hanzhe Liang Personal Homepage" />
+
+  <!-- Optional: nicer font (works well on academic pages) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      background: #f8f6f2; 
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #222;
+    :root{
+      --bg: #f7f6f3;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: rgba(17, 24, 39, 0.10);
+      --shadow: 0 10px 25px rgba(17, 24, 39, 0.06);
+      --shadow2: 0 1px 2px rgba(17, 24, 39, 0.06);
+      --brand: #2563eb;
+      --brand2:#7c3aed;
+      --chip: rgba(37, 99, 235, 0.10);
+      --ring: 0 0 0 4px rgba(37,99,235,.12);
+      --radius: 14px;
+    }
+    [data-theme="dark"]{
+      --bg: #0b1220;
+      --card: #0f172a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(229, 231, 235, 0.12);
+      --shadow: 0 10px 25px rgba(0,0,0,0.35);
+      --shadow2: 0 1px 2px rgba(0,0,0,0.30);
+      --brand: #60a5fa;
+      --brand2:#a78bfa;
+      --chip: rgba(96,165,250,0.12);
+      --ring: 0 0 0 4px rgba(96,165,250,.16);
     }
 
-    /* Page center container */
-    .page {
-      max-width: 850px;  
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(37,99,235,0.12), transparent 60%),
+        radial-gradient(1200px 600px at 80% 0%, rgba(124,58,237,0.10), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{ color: var(--brand); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .page{
+      max-width: 920px;
       margin: 0 auto;
-      padding: 0 18px;
+      padding: 0 18px 34px;
     }
 
-    .card {
-      background: #fff;
-      padding: 22px;
-      margin: 26px 0;
-      border-radius: 8px;
-      border: 1px solid #e5e5e5;
-      text-align: left;
+    /* Top header */
+    .topbar{
+      display:flex;
+      justify-content:flex-end;
+      padding: 16px 0 0;
     }
-
-    .card h2 {
-      font-weight: normal;
-      margin-top: 0;
+    .toggle{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 12px;
+      box-shadow: var(--shadow2);
+      cursor:pointer;
+      user-select:none;
     }
-
-    .header {
-      text-align: center;
-      padding: 40px 0 15px;
-    }
-    .header-text h1 {
-      margin: 0;
-      font-weight: normal;
-    }
-    .links a {
-      margin-right: 10px;
-      text-decoration: none;
-      color: #3366cc;
-    }
-
-    /* Publications */
-    .pub-item {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 18px;
-      align-items: flex-start;
-    }
-    .pub-cover img {
-      width: 130px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-    .pub-info h3 {
-      margin: 0 0 4px;
-      font-size: 16px;
-      font-weight: normal;
-    }
-
-    @media (max-width: 600px) {
-      .pub-item { flex-direction: column; }
-      .pub-cover img { width: 100%; }
-    }
-
-    /* -------- Timeline (center axis + alternating left/right) -------- */
-
-    .vertical-timeline {
+    .toggle .dot{
+      width: 36px;
+      height: 20px;
+      border-radius: 999px;
+      background: rgba(107,114,128,.18);
       position: relative;
-      margin: 30px 0;
+      border: 1px solid var(--border);
+    }
+    .toggle .dot::after{
+      content:"";
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--card);
+      box-shadow: var(--shadow2);
+      transition: all .2s ease;
+    }
+    [data-theme="dark"] .toggle .dot::after{ left: 18px; }
+
+    .header{
+      text-align:center;
+      padding: 22px 0 16px;
+    }
+    .hero{
+      background: linear-gradient(135deg, rgba(37,99,235,0.10), rgba(124,58,237,0.08));
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 26px 18px 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(500px 180px at 30% 10%, rgba(37,99,235,0.15), transparent 60%),
+                  radial-gradient(500px 180px at 70% 0%, rgba(124,58,237,0.15), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative;
+      z-index:1;
     }
 
-    /* middle axis */
-    .vertical-timeline::before {
-      content: "";
-      position: absolute;
+    h1{
+      margin:0;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      font-size: clamp(28px, 4vw, 38px);
+    }
+    .subtitle{
+      margin: 8px 0 6px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .location{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .links{
+      display:flex;
+      justify-content:center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow2);
+      color: var(--text);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+      border-color: rgba(37,99,235,0.25);
+      text-decoration:none;
+    }
+    .btn .icon{ font-size: 14px; opacity: .85; }
+
+    /* Cards */
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      margin: 18px 0;
+      box-shadow: var(--shadow2);
+    }
+    .card h2{
+      margin:0 0 12px;
+      font-size: 16px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .card p{ margin: 10px 0; color: rgba(0,0,0,0); } /* will be overridden */
+    .card p, .card li{ color: var(--text); }
+    .muted{ color: var(--muted); }
+
+    /* Research interests chips */
+    .chips{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .chip{
+      background: var(--chip);
+      border: 1px solid rgba(37,99,235,0.18);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: var(--text);
+    }
+    [data-theme="dark"] .chip{ border-color: rgba(96,165,250,0.22); }
+
+    /* Timeline (cleaner) */
+    .vertical-timeline{
+      position: relative;
+      margin: 14px 0 0;
+      padding: 6px 0;
+    }
+    .vertical-timeline::before{
+      content:"";
+      position:absolute;
       left: 50%;
       top: 0;
       bottom: 0;
       width: 2px;
-      background: #dcdcdc;
+      background: rgba(107,114,128,0.25);
       transform: translateX(-1px);
     }
-
-    .vt-item {
+    .vt-item{
       position: relative;
       width: 50%;
-      padding: 10px 20px;
-      margin-bottom: 26px;
-      box-sizing: border-box;
+      padding: 10px 22px;
+      margin-bottom: 18px;
     }
-
-    /* timeline circle */
-    .vt-item::before {
-      content: "";
-      position: absolute;
-      top: 8px;
-      width: 12px;
-      height: 12px;
+    .vt-item::before{
+      content:"";
+      position:absolute;
+      top: 14px;
+      width: 12px; height: 12px;
       border-radius: 50%;
-      background: #fff;
-      border: 2px solid #999;
+      background: var(--card);
+      border: 2px solid rgba(107,114,128,0.7);
+      box-shadow: var(--shadow2);
       z-index: 2;
     }
+    .vt-left{
+      left:0;
+      text-align:right;
+      padding-right: 46px;
+    }
+    .vt-left::before{ right: -6px; }
+    .vt-right{
+      left:50%;
+      text-align:left;
+      padding-left: 46px;
+    }
+    .vt-right::before{ left: -6px; }
 
-    /* left side */
-    .vt-left {
-      left: 0;
-      text-align: right;
-      padding-right: 40px;
-    }
-    .vt-left::before {
-      right: -6px;
-    }
-
-    /* right side */
-    .vt-right {
-      left: 50%;
-      text-align: left;
-      padding-left: 40px;
-    }
-    .vt-right::before {
-      left: -6px;
-    }
-
-    .vt-date {
+    .vt-date{
       margin: 0;
-      color: #666;
-      font-size: 13px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .02em;
     }
-    .vt-title {
-      margin: 2px 0 0;
-      font-size: 15px;
+    .vt-title{
+      margin: 4px 0 0;
+      font-size: 14px;
+      font-weight: 500;
     }
 
-    /* Mobile layout */
-    @media (max-width: 768px) {
-      .vertical-timeline::before { left: 12px; }
-      .vt-item {
+    /* Works */
+    .works-head{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .works-note{
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .pub-item{
+      display:flex;
+      gap: 14px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.45);
+      backdrop-filter: blur(6px);
+      margin: 14px 0;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    [data-theme="dark"] .pub-item{
+      background: rgba(15,23,42,0.55);
+    }
+    .pub-item:hover{
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+      border-color: rgba(37,99,235,0.22);
+    }
+    .pub-cover img{
+      width: 132px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+    .pub-info h3{
+      margin: 0 0 6px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .pub-info p{
+      margin: 6px 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .pub-meta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      align-items:center;
+    }
+    .tag{
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--card);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px){
+      .vertical-timeline::before{ left: 12px; }
+      .vt-item{
         width: 100%;
         left: 0 !important;
-        text-align: left !important;
+        text-align:left !important;
         padding-left: 42px;
+        padding-right: 10px;
       }
-      .vt-item::before {
+      .vt-item::before{
         left: 4px !important;
         right: auto !important;
       }
+      .pub-item{ flex-direction: column; }
+      .pub-cover img{ width: 100%; height: 170px; }
     }
 
+    .footer{
+      text-align:center;
+      padding: 18px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
   </style>
 </head>
 
 <body>
   <div class="page">
 
-    <!-- Header -->
+    <div class="topbar">
+      <div class="toggle" id="themeToggle" aria-label="Toggle theme" role="button" tabindex="0">
+        <span style="font-size:13px;color:var(--muted);font-weight:600;">Theme</span>
+        <div class="dot"></div>
+      </div>
+    </div>
+
     <header class="header">
-      <div class="header-text">
-        <h1>Hanzhe Liang</h1>
-        <p class="subtitle">3D Anomaly Detection · Spatial Intelligence · Drug Repurposing</p>
-        <p class="location">Shenzhen, China</p>
-        <div class="links">
-          <a href="mailto:2023362051@email.szu.edu.com">Email</a>
-          <a href="https://scholar.google.com/citations?user=pOL7KVkAAAAJ" target="_blank">Google Scholar</a>
-          <a href="https://github.com/hzzzzzhappy" target="_blank">GitHub</a>
+      <div class="hero">
+        <div class="hero-inner">
+          <h1>Hanzhe Liang</h1>
+          <p class="subtitle">3D Anomaly Detection · Spatial Intelligence · Drug Repurposing</p>
+          <p class="location">Shenzhen, China</p>
+
+          <div class="links">
+            <a class="btn" href="mailto:2023362051@email.szu.edu.com">
+              <span class="icon">✉</span><span>Email</span>
+            </a>
+            <a class="btn" href="https://scholar.google.com/citations?user=pOL7KVkAAAAJ" target="_blank" rel="noreferrer">
+              <span class="icon">🎓</span><span>Google Scholar</span>
+            </a>
+            <a class="btn" href="https://github.com/hzzzzzhappy" target="_blank" rel="noreferrer">
+              <span class="icon">⌂</span><span>GitHub</span>
+            </a>
+          </div>
         </div>
       </div>
     </header>
 
-    <!-- About Me -->
     <main>
 
       <section class="card">
-        <h2>About Me</h2>
+        <h2>About</h2>
         <p>
           I am Hanzhe Liang. My research interests include 3D anomaly detection and spatial intelligence, and my doctoral research will focus on drug repurposing and repositioning.
         </p>
@@ -196,23 +411,19 @@
         </p>
       </section>
 
-      <!-- Research Interests -->
       <section class="card">
         <h2>Research Interests</h2>
-        <ul>
-          <li>3D Anomaly Detection</li>
-          <li>Spatial Intelligence and Digital Twin</li>
-          <li>Drug Repurposing and Repositioning</li>
+        <ul class="chips">
+          <li class="chip">3D Anomaly Detection</li>
+          <li class="chip">Spatial Intelligence & Digital Twin</li>
+          <li class="chip">Drug Repurposing & Repositioning</li>
         </ul>
       </section>
 
-      <!-- Timeline -->
       <section class="card">
         <h2>Timeline</h2>
-
         <div class="vertical-timeline">
 
-          <!-- newest top -->
           <div class="vt-item vt-left">
             <p class="vt-date">2026 (expected)</p>
             <p class="vt-title">Ph.D. Study at MBZUAI</p>
@@ -236,114 +447,155 @@
         </div>
       </section>
 
-      <!-- Publications -->
       <section class="card">
-        <h2>WORKS</h2>
-        
+        <div class="works-head">
+          <h2>Works</h2>
+          <p class="works-note">Selected papers & resources</p>
+        </div>
+
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/tta.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/tta.png" alt="cover"></div>
           <div class="pub-info">
             <h3>A Unified Contrastive Framework with Test-Time Adaptation for Robust 3D Anomaly Localization</h3>
             <p>Linna Liu*, Hanzhe Liang*, Can Gao, Wei Zhuo, Linlin Shen, Jinbao Wang</p>
-            <p>Under review · 2025-12-08</p>
+            <div class="pub-meta">
+              <span class="tag">Under review</span>
+              <span class="tag">2025-12-08</span>
+            </div>
           </div>
         </div>
 
         <div class="pub-item">
-          <div class="pub-cover">
-            <img src="/assets/images/publication/suvey.png">
-          </div>
+          <div class="pub-cover"><img src="/assets/images/publication/suvey.png" alt="cover"></div>
           <div class="pub-info">
             <h3>
-              <a href="https://github.com/M-3LAB/awesome-3d-anomaly-detection"
-                 target="_blank"
-                 style="text-decoration:none; color:inherit;">
+              <a href="https://github.com/M-3LAB/awesome-3d-anomaly-detection" target="_blank" rel="noreferrer" style="color:inherit;">
                 3D Anomaly Detection: A Survey
               </a>
             </h3>
             <p>Hanzhe Liang*, Bingyang Guo*, Yawen Huang*, Jiayi Lyu, Can Gao✝, Yunkang Cao, Jinbao Wang✝, Ruiyun Yu, Linlin Shen, Pan Li</p>
-            <p>Under review · 2025-11-10</p>
+            <div class="pub-meta">
+              <span class="tag">Under review</span>
+              <span class="tag">2025-11-10</span>
+              <a class="tag" href="https://github.com/M-3LAB/awesome-3d-anomaly-detection" target="_blank" rel="noreferrer">Code</a>
+            </div>
           </div>
         </div>
-        
+
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/pr.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/pr.png" alt="cover"></div>
           <div class="pub-info">
             <h3>A Lightweight 3D Anomaly Detection Method with Rotationally Invariant Features</h3>
             <p>Hanzhe Liang, Jie Zhou, Can Gao, Bingyang Guo, Jinbao Wang, Linlin Shen</p>
-            <p>Pattern Recognition · 2025-11-08</p>
+            <div class="pub-meta">
+              <span class="tag">Pattern Recognition</span>
+              <span class="tag">2025-11-08</span>
+            </div>
           </div>
         </div>
 
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/IEC3D-AD.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/IEC3D-AD.png" alt="cover"></div>
           <div class="pub-info">
             <h3>IEC3D-AD: Industrial Equipment Components Dataset for 3D Anomaly Detection</h3>
             <p>Bingyang Guo, Hongjie Li, Ruiyun Yu, Hanzhe Liang, Jinbao Wang</p>
-            <p>Under review · 2025-11-01</p>
+            <div class="pub-meta">
+              <span class="tag">Under review</span>
+              <span class="tag">2025-11-01</span>
+            </div>
           </div>
         </div>
 
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/C3D.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/C3D.png" alt="cover"></div>
           <div class="pub-info">
             <h3>C3D-AD: Continual 3D Anomaly Detection via Kernel Attention</h3>
             <p>Haoquan Lu, Hanzhe Liang, Jie Zhang, Chenxi Hu, Jinbao Wang, Can Gao</p>
-            <p>Under review · 2025-08-02</p>
+            <div class="pub-meta">
+              <span class="tag">Under review</span>
+              <span class="tag">2025-08-02</span>
+            </div>
           </div>
         </div>
 
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/patch3d.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/patch3d.png" alt="cover"></div>
           <div class="pub-info">
             <h3>Fence Theorem: Dual-Objective Semantic-Structure Isolation in Preprocessing for 3D Anomaly Detection</h3>
             <p>Hanzhe Liang, Jie Zhou, Xuanxin Chen, Jinbao Wang, Can Gao</p>
-            <p>ICCV Workshop (oral) · 2025-07-20</p>
+            <div class="pub-meta">
+              <span class="tag">ICCV Workshop (oral)</span>
+              <span class="tag">2025-07-20</span>
+            </div>
           </div>
         </div>
 
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/MMDUS.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/MMDUS.png" alt="cover"></div>
           <div class="pub-info">
             <h3>Taming Anomalies with Down-Up Sampling Networks: Group Center Preserving Reconstruction for 3D Anomaly Detection</h3>
             <p>Hanzhe Liang, Jie Zhang, Tao Dai, Linlin Shen, Jinbao Wang, Can Gao</p>
-            <p>MM25 (poster) · 2025-07-04</p>
+            <div class="pub-meta">
+              <span class="tag">MM25 (poster)</span>
+              <span class="tag">2025-07-04</span>
+            </div>
           </div>
         </div>
 
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/MC4AD.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/MC4AD.png" alt="cover"></div>
           <div class="pub-info">
             <h3>Examining the Source of Defects for 3D Anomaly Detection</h3>
             <p>Hanzhe Liang, Aoran Wang, Jie Zhou, Xin Jin, Can Gao✝, Jinbao Wang✝</p>
-            <p>Under review · 2025-05-13</p>
+            <div class="pub-meta">
+              <span class="tag">Under review</span>
+              <span class="tag">2025-05-13</span>
+            </div>
           </div>
         </div>
 
         <div class="pub-item">
-          <div class="pub-cover"><img src="/assets/images/publication/AAAI25ISMP.png"></div>
+          <div class="pub-cover"><img src="/assets/images/publication/AAAI25ISMP.png" alt="cover"></div>
           <div class="pub-info">
             <h3>Look Inside for More: Internal Spatial Modality Perception</h3>
             <p>Hanzhe Liang, Guoyang Xie, Chengbin Hou, Bingshu Wang, Can Gao, Jinbao Wang</p>
-            <p>AAAI25 (poster) · 2025-01-01</p>
+            <div class="pub-meta">
+              <span class="tag">AAAI25 (poster)</span>
+              <span class="tag">2025-01-01</span>
+            </div>
           </div>
         </div>
 
       </section>
 
-
     </main>
 
-    <footer class="footer" style="text-align:center; padding:22px 0; color:#555;">
-      <p>© <span id="year"></span> Hanzhe Liang</p>
-      <p>Minimal academic homepage powered by GitHub Pages.</p>
+    <footer class="footer">
+      <p>© <span id="year"></span> Hanzhe Liang · Minimal academic homepage powered by GitHub Pages.</p>
     </footer>
 
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Theme toggle (remember choice)
+    const root = document.documentElement;
+    const toggle = document.getElementById("themeToggle");
+    const saved = localStorage.getItem("theme");
+    if (saved) root.setAttribute("data-theme", saved);
+
+    function flipTheme(){
+      const cur = root.getAttribute("data-theme");
+      const next = cur === "dark" ? "" : "dark";
+      if (next) root.setAttribute("data-theme", next);
+      else root.removeAttribute("data-theme");
+      localStorage.setItem("theme", next || "light");
+    }
+
+    toggle.addEventListener("click", flipTheme);
+    toggle.addEventListener("keydown", (e)=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); flipTheme(); } });
+  </script>
 </body>
 </html>
