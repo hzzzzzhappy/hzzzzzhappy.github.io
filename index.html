@@ -7,28 +7,43 @@
   <meta name="description" content="Hanzhe Liang Personal Homepage" />
 
   <style>
+    :root {
+      --title-red: #c86a6a;
+      --title-red-dark: #b85b5b;
+      --text-main: #222222;
+      --text-soft: #555555;
+      --text-muted: #777777;
+      --line: #e7e7e7;
+      --tag-bg: #fbefef;
+      --tag-border: #e7caca;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       background: #ffffff;
-      color: #a66a6a;
+      color: var(--text-main);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .container {
       max-width: 980px;
       margin: 0 auto;
-      padding: 36px 24px 60px;
+      padding: 42px 24px 64px;
     }
 
     .header {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 32px;
-      margin-bottom: 28px;
+      gap: 36px;
+      margin-bottom: 30px;
     }
 
     .header-text {
@@ -37,32 +52,42 @@
     }
 
     h1 {
-      margin: 0 0 8px 0;
-      font-size: 34px;
+      margin: 0 0 10px 0;
+      font-size: 36px;
       font-weight: 700;
-      color: #b85c5c;
+      line-height: 1.2;
+      letter-spacing: 0.2px;
+      color: var(--title-red-dark);
     }
 
     .subtitle {
       margin: 0 0 10px 0;
       font-size: 17px;
-      color: #8f6b6b;
+      color: var(--text-soft);
+    }
+
+    .intro {
+      margin: 14px 0 0 0;
+      color: var(--text-main);
     }
 
     .contact {
-      margin: 10px 0 0 0;
+      margin: 14px 0 0 0;
       font-size: 15px;
-      color: #8f6b6b;
+      color: var(--text-soft);
     }
 
     .contact a {
-      color: #c96f6f;
+      color: var(--text-soft);
       text-decoration: none;
       margin-right: 14px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
     }
 
     .contact a:hover {
-      text-decoration: underline;
+      color: var(--title-red-dark);
+      border-bottom-color: var(--title-red-dark);
     }
 
     .portrait {
@@ -73,40 +98,45 @@
     .portrait img {
       width: 100%;
       display: block;
-      border: 1px solid #e6caca;
-      padding: 4px;
       background: #fff;
+      border: 1px solid #d9d9d9;
+      padding: 5px;
+    }
+
+    section {
+      margin-top: 30px;
     }
 
     h2 {
-      margin-top: 30px;
-      margin-bottom: 10px;
+      margin: 0 0 12px 0;
+      padding-bottom: 6px;
       font-size: 24px;
-      color: #b85c5c;
       font-weight: 700;
-      border-bottom: 1px solid #efdede;
-      padding-bottom: 4px;
+      color: var(--title-red-dark);
+      border-bottom: 1px solid var(--line);
+      letter-spacing: 0.2px;
     }
 
     h3.year {
-      margin-top: 24px;
-      margin-bottom: 10px;
-      font-size: 24px;
-      color: #b85c5c;
+      margin: 26px 0 10px 0;
+      font-size: 22px;
       font-weight: 700;
+      color: var(--title-red);
     }
 
     p {
       margin: 10px 0;
+      color: var(--text-main);
     }
 
     ul.simple-list {
-      margin: 8px 0 0 20px;
+      margin: 6px 0 0 22px;
       padding: 0;
     }
 
     ul.simple-list li {
       margin: 6px 0;
+      color: var(--text-main);
     }
 
     ol.pub-list {
@@ -115,25 +145,30 @@
     }
 
     ol.pub-list li {
-      margin: 10px 0 14px 0;
+      margin: 10px 0 15px 0;
+      padding-left: 2px;
+      color: var(--text-main);
     }
 
     .pub-title {
       font-style: italic;
+      color: var(--text-main);
     }
 
     .venue {
       font-style: italic;
+      color: var(--text-soft);
     }
 
     .name-highlight {
       font-weight: 700;
-      color: #a94444;
+      color: #111111;
     }
 
     .note {
-      color: #8f6b6b;
+      color: var(--text-muted);
       font-size: 14px;
+      margin-top: -2px;
     }
 
     .pub-tag {
@@ -142,29 +177,35 @@
       padding: 1px 8px;
       font-size: 12px;
       line-height: 1.6;
-      color: #b85c5c;
-      background: #faeded;
-      border: 1px solid #e8c4c4;
+      color: var(--title-red-dark);
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
       border-radius: 999px;
       vertical-align: middle;
+      white-space: nowrap;
     }
 
     .footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #8f6b6b;
-      border-top: 1px solid #efdede;
+      margin-top: 42px;
       padding-top: 14px;
+      font-size: 14px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--line);
+    }
+
+    strong {
+      color: #111111;
     }
 
     @media (max-width: 768px) {
       .container {
-        padding: 24px 16px 40px;
+        padding: 26px 16px 42px;
       }
 
       .header {
         flex-direction: column-reverse;
         align-items: flex-start;
+        gap: 20px;
       }
 
       .portrait {
@@ -172,11 +213,15 @@
       }
 
       h1 {
-        font-size: 28px;
+        font-size: 29px;
       }
 
-      h2, h3.year {
+      h2 {
         font-size: 22px;
+      }
+
+      h3.year {
+        font-size: 20px;
       }
 
       body {
@@ -192,9 +237,8 @@
     <header class="header">
       <div class="header-text">
         <h1>Hanzhe Liang 梁涵喆</h1>
-        <!-- <p class="subtitle"></p> -->
 
-        <p>
+        <p class="intro">
           My name is Hanzhe Liang, and I am due to graduate from Shenzhen University in June 2026 with a double Bachelor’s degree in Management and Science. Having completed my undergraduate studies in three years, I am about to join MBZUAI as a PhD student. I have been awarded several scholarships and have undertaken study placements at various research institutions and companies.
         </p>
 
