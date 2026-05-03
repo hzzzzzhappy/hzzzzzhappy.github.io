@@ -30,12 +30,12 @@ I am Hanzhe Liang. I am expected to graduate from Shenzhen University in June 20
 
 My research interests include 3D anomaly detection, open-set anomaly detection, point cloud understanding, spatial intelligence, digital twins, and AI for biomedical discovery. I am particularly interested in building generalizable AI systems for industrial inspection and high-order biomedical prediction.
 
-## Education
+## Experience
 
 1. **2026 expected** — Ph.D. Student, Department of Computational Biology, MBZUAI
 
 2. **2026 – 2026** — Visiting Student, Department of Computational Biology, MBZUAI
 
-3. **2023 – 2025** — Research Assistantship, Computer Vision Institute, Shenzhen University
+3. **2023 – 2025** — Research Assistantship, Computer Vision Institute and School of Artificial Intelligence, Shenzhen University
 
 4. **2023 – 2026** — Undergraduate Student, Shenzhen University and Audencia
