@@ -5,7 +5,7 @@ permalink: /
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: hanzhe.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Shenzhen, China</p>
@@ -38,7 +38,3 @@ My research interests include 3D anomaly detection, open-set anomaly detection, 
 3. **2023 – 2025** — Research Assistantship, Computer Vision Institute, Shenzhen University
 
 4. **2023 – 2026** — Undergraduate Student, Shenzhen University and Audencia
-
-## Selected Publications
-
-My recent work focuses on 3D anomaly detection, open-set industrial inspection, and high-order representation learning. A complete publication list is available on the publications page.
