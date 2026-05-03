@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper **CONTEXTOR: Contextualized High-order Contrastive Learning** was accepted by **ICML 2026**.
+CONTEXTOR was accepted by ICML 2026.
