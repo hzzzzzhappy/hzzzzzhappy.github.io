@@ -10,6 +10,7 @@ profile:
   more_info: >
     <p>Shenzhen, China</p>
     <p>Incoming Ph.D. Student, MBZUAI</p>
+    <p>lianghanzhe2023(at)email(dot)szu(dot)edu(dot)cn</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
