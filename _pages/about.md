@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am Hanzhe Liang. I am expected to graduate from Shenzhen University in June 2026 with a double Bachelor's degree in Management and Science, and I will join MBZUAI as a Ph.D. student.
+I am Hanzhe Liang. I am expected to graduate from Shenzhen University in June 2026 with a double Bachelor's degree in Management and Science, and I will join Department of Computational Biology at MBZUAI as a Ph.D. student.
 
 My research interests include 3D anomaly detection, open-set anomaly detection, point cloud understanding, spatial intelligence, digital twins, and AI for biomedical discovery. I am particularly interested in building generalizable AI systems for industrial inspection and high-order biomedical prediction.
 
