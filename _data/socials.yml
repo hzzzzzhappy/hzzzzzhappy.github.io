@@ -1,6 +1,7 @@
 # this file contains the social media links and usernames of the author
 # the socials will be displayed in the order they are defined here
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
+
 # cv_pdf: # path to your CV PDF file
 email: 2023362051@email.szu.edu.com # your email address
 # inspirehep_id: # Inspire HEP author ID
@@ -8,9 +9,10 @@ rss_icon: true # comment this line to hide the RSS icon
 scholar_userid: pOL7KVkAAAAJ # your Google Scholar ID
 github_username: hzzzzzhappy # your GitHub user name
 orcid_id: 0009-0000-7771-4683 # your ORCID ID
-# wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
-# whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-custom_social: # can be any name here other than the ones already defined in the jekyll-socials plugin
-  # logo: /assets/img/icon.png # can be png, svg, jpg
+# wechat_qr: # filename of your wechat qr-code saved as an image, e.g., wechat-qr.png if saved to assets/img/wechat-qr.png
+# whatsapp_number: # your WhatsApp number in international format
+
+custom_social:
+  logo: fa-solid fa-globe
   title: Personal Website
   url: https://hzzzzzhappy.github.io/
