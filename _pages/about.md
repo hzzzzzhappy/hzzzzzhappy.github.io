@@ -2,7 +2,6 @@
 layout: about
 title: about
 permalink: /
-subtitle: Incoming Ph.D. Student, MBZUAI. 3D Anomaly Detection. Spatial Intelligence. Biomedical AI.
 
 profile:
   align: right
@@ -11,7 +10,6 @@ profile:
   more_info: >
     <p>Shenzhen, China</p>
     <p>Incoming Ph.D. Student, MBZUAI</p>
-    <p>3D Anomaly Detection · Spatial Intelligence · Biomedical AI</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
