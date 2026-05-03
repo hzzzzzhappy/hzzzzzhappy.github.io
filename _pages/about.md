@@ -35,8 +35,11 @@ My research interests include 3D anomaly detection, open-set anomaly detection, 
 ## Education
 
  **2026 expected** — Ph.D. Student, Department of Computational Biology, MBZUAI
+ 
  **2026 – 2026** — Visiting Student, Department of Computational Biology, MBZUAI
+ 
  **2023 – 2025** — Research Assistantship, Computer Vision Institute, Shenzhen University
+ 
  **2023 – 2026** — Undergraduate Student, Shenzhen University and Audencia
 
 ## Selected Publications
