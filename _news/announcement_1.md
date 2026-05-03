@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2026-05-01 00:00:00+0800
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+Our paper **CONTEXTOR: Contextualized High-order Contrastive Learning** was accepted by **ICML 2026**.
