@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-szu-group",
+          title: "SZU Group",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/join/";
+          },
         },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
