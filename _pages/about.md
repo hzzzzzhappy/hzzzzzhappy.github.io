@@ -38,4 +38,4 @@ My research interests include anomaly detection, spatial intelligence, digital t
 
 3. **2023 – 2025** — Research Assistantship, Computer Vision Institute and School of Artificial Intelligence, Shenzhen University
 
-4. **2023 – 2026** — Undergraduate Student, Shenzhen University and Audencia
+4. **2023 – 2026** — Bachelor of Management and Bachelor of Science, Shenzhen University and Audencia
