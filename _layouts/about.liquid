@@ -57,15 +57,21 @@ layout: default
     {% endif %}
 
     {% if page.selected_papers %}
+    <div class="publications">
     
-    ## <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Some publications</a>
+    <h2>
+      <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Some publications</a>
+    </h2>
     
     {% include selected_papers.liquid %}
     
-    ## <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Some working papers</a>
+    <h2>
+      <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Some working papers</a>
+    </h2>
     
     {% include selected_working_papers.liquid %}
     
+    </div>
     {% endif %}
 
     <!-- Social -->
