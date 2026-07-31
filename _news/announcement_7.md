@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-MVFM-3DAD was accepted by the International Conference on Image and Graphics.
+MVFM-3DAD was accepted by the International Conference on Image and Graphics 26.
