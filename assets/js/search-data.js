@@ -369,10 +369,7 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-accepted-the-ph-d-offer-from-the-department-of-computational-biology-at-mbzuai",
-          title: 'I accepted the Ph.D. offer from the Department of Computational Biology at MBZUAI....',
-          description: "",
-          section: "News",},{id: "news-contextor-was-accepted-by-the-international-conference-on-machine-learning-2026",
+            },},{id: "news-contextor-was-accepted-by-the-international-conference-on-machine-learning-2026",
           title: 'CONTEXTOR was accepted by the International Conference on Machine Learning 2026.',
           description: "",
           section: "News",},{id: "news-mff-m3ad-was-accepted-by-neural-networks",
