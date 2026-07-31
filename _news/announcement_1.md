@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-CONTEXTOR was accepted by ICML 2026.
+CONTEXTOR was accepted by International Conference on Machine Learning 2026.
