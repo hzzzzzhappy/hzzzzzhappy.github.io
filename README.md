@@ -28,4 +28,4 @@
 
 - Liquid 文件使用仓库指定的 Shopify Prettier 插件格式化。
 - SCSS 文件通过 Dart Sass 编译。
-- `homepage-layout-preview.html` 已使用线上真实主页内容更新。
+- `homepage-layout-preview.html` 已生成为静态双栏 HTML，不依赖浏览器运行时重排，并已移除 Edge 兼容性风险。
