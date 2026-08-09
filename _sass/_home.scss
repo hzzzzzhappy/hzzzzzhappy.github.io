@@ -1,0 +1,335 @@
+/* Wide, two-column home page with independent News and paper scrolling. */
+@media (min-width: 901px) {
+  body:has(.home-page) {
+    overflow: hidden;
+  }
+
+  body:has(.home-page) > .container[role="main"] {
+    margin-top: 0.75rem !important;
+  }
+}
+
+.home-page {
+  --home-body-size: clamp(0.82rem, 0.76vw, 0.9rem);
+  --paper-image-width: 160px;
+  --paper-image-height: 100px;
+
+  width: min(1680px, calc(100vw - clamp(2rem, 5vw, 6rem)));
+  max-width: none;
+  margin-inline: 50%;
+  transform: translateX(-50%);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.85fr) minmax(0, 1.35fr);
+  gap: clamp(2.5rem, 5vw, 6.5rem);
+  align-items: stretch;
+  height: calc(100dvh - 5.75rem);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.home-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.home-header,
+.home-profile,
+.home-copy {
+  flex: 0 0 auto;
+}
+
+.home-header {
+  margin-bottom: 0.45rem;
+}
+
+.home-header .post-title {
+  margin-bottom: 0;
+  font-size: clamp(1.8rem, 2.4vw, 2.65rem);
+  letter-spacing: -0.035em;
+}
+
+.home-profile {
+  display: grid;
+  grid-template-columns: clamp(118px, 12vw, 160px) minmax(0, 1fr);
+  gap: clamp(0.9rem, 2vw, 1.5rem);
+  align-items: start;
+  margin-bottom: 0.65rem;
+}
+
+.home-profile__image,
+.home-profile__image figure,
+.home-profile__image picture {
+  width: 100%;
+  margin: 0;
+}
+
+.home-profile__image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.home-profile__info,
+.home-copy,
+.home-news table,
+.home-papers .bibliography .title,
+.home-papers .bibliography .author,
+.home-papers .bibliography .periodical {
+  font-size: var(--home-body-size) !important;
+  line-height: 1.45;
+}
+
+.home-profile__info {
+  margin: 0;
+  padding: 0.15rem 0 0;
+}
+
+.home-profile__info p {
+  margin-bottom: 0.35rem;
+}
+
+.home-copy p {
+  margin-bottom: 0.55rem;
+}
+
+.home-copy h2,
+.home-news h2,
+.home-latest-posts h2,
+.home-papers > h2 {
+  margin: 0.5rem 0 0.35rem;
+  font-size: clamp(1.08rem, 1.2vw, 1.3rem);
+  line-height: 1.25;
+}
+
+.home-copy ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.home-copy li {
+  margin-bottom: 0.2rem;
+  padding-left: 0.15rem;
+}
+
+.home-copy li p {
+  margin-bottom: 0;
+}
+
+.home-news {
+  flex: 1 1 auto;
+  min-height: 6rem;
+  margin-top: 0.1rem;
+  padding-right: 0.45rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.home-news .table-responsive {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.home-news table {
+  margin-bottom: 0;
+}
+
+.home-news table th,
+.home-news table td {
+  padding-block: 0.23rem;
+}
+
+.home-news table th {
+  white-space: nowrap;
+}
+
+.home-papers {
+  min-width: 0;
+  height: 100%;
+  padding: 0 0.7rem 5rem 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.home-news:focus-visible,
+.home-papers:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
+}
+
+.home-papers > h2:first-child {
+  margin-top: 0;
+}
+
+.home-papers .bibliography {
+  padding-left: 0;
+}
+
+.home-papers .bibliography > li {
+  margin-bottom: 1.2rem;
+}
+
+.home-papers .bibliography li .row {
+  display: grid;
+  grid-template-columns: var(--paper-image-width) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-inline: 0;
+}
+
+.home-papers .bibliography li .abbr {
+  position: relative;
+  display: block;
+  width: var(--paper-image-width);
+  max-width: none;
+  height: var(--paper-image-height);
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0.35rem;
+}
+
+.home-papers .bibliography li .abbr:not(:has(img))::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed var(--global-divider-color);
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      135deg,
+      transparent 48%,
+      var(--global-divider-color) 49%,
+      var(--global-divider-color) 51%,
+      transparent 52%
+    ),
+    var(--global-card-bg-color);
+  color: var(--global-text-color-light);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  content: "IMAGE";
+}
+
+.home-papers .bibliography li .abbr picture,
+.home-papers .bibliography li .abbr img {
+  display: block;
+  width: var(--paper-image-width) !important;
+  height: var(--paper-image-height) !important;
+  margin: 0;
+}
+
+.home-papers .bibliography li .abbr img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-papers .bibliography li .col-sm-8 {
+  width: auto;
+  max-width: none;
+  padding-inline: 0;
+}
+
+.home-papers .bibliography .title,
+.home-papers .bibliography .author,
+.home-papers .bibliography .periodical {
+  margin-bottom: 0.18rem;
+}
+
+.home-papers__secondary-heading {
+  margin-top: clamp(2.5rem, 5vw, 5rem) !important;
+}
+
+@media (max-height: 780px) and (min-width: 901px) {
+  .home-grid {
+    height: calc(100dvh - 5rem);
+  }
+
+  .home-header {
+    margin-bottom: 0.3rem;
+  }
+
+  .home-profile {
+    grid-template-columns: 108px minmax(0, 1fr);
+    margin-bottom: 0.4rem;
+  }
+
+  .home-page {
+    --home-body-size: 0.75rem;
+  }
+
+  .home-copy p {
+    margin-bottom: 0.35rem;
+  }
+
+  .home-copy h2,
+  .home-news h2,
+  .home-papers > h2 {
+    margin-block: 0.3rem 0.18rem;
+  }
+
+  .home-news {
+    min-height: 4.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page {
+    --home-body-size: 1rem;
+
+    width: 100%;
+    margin-inline: 0;
+    transform: none;
+  }
+
+  .home-grid {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+
+  .home-sidebar {
+    height: auto;
+    overflow: visible;
+  }
+
+  .home-profile {
+    grid-template-columns: minmax(112px, 34vw) minmax(0, 1fr);
+  }
+
+  .home-news {
+    min-height: 0;
+    padding-right: 0;
+    overflow: visible;
+  }
+
+  .home-papers {
+    height: auto;
+    padding: 0 0 3rem;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .home-profile__image {
+    width: min(62vw, 220px);
+  }
+
+  .home-papers .bibliography li .row {
+    grid-template-columns: 1fr;
+  }
+}
