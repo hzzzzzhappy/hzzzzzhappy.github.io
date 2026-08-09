@@ -1,12 +1,19 @@
 /* Wide, two-column home page with independent News and paper scrolling. */
+:root {
+  --home-background: #f7f3eb;
+}
+
+body:has(.home-page),
+body:has(.home-page) #navbar {
+  background-color: var(--home-background);
+}
 @media (min-width: 901px) {
-  .home-page {
-    position: fixed;
-    top: 4.25rem;
-    bottom: 1.65rem;
-    left: 50%;
-    margin: 0;
-    transform: translateX(-50%);
+  body:has(.home-page) {
+    overflow: hidden;
+  }
+
+  body:has(.home-page) > .container[role="main"] {
+    margin-top: 0.75rem !important;
   }
 }
 
@@ -26,7 +33,7 @@
   grid-template-columns: minmax(360px, 0.85fr) minmax(0, 1.35fr);
   gap: clamp(2.5rem, 5vw, 6.5rem);
   align-items: stretch;
-  height: 100%;
+  height: calc(100dvh - 5.75rem);
   min-height: 0;
   overflow: hidden;
 }
@@ -264,7 +271,7 @@
 
 @media (max-height: 780px) and (min-width: 901px) {
   .home-grid {
-    height: 100%;
+    height: calc(100dvh - 5rem);
   }
 
   .home-header {
