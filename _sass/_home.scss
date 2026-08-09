@@ -12,8 +12,8 @@
 
 .home-page {
   --home-body-size: clamp(0.82rem, 0.76vw, 0.9rem);
-  --paper-image-width: 160px;
-  --paper-image-height: 100px;
+  --paper-image-width: 180px;
+  --paper-image-height: 108px;
 
   width: min(1680px, calc(100vw - clamp(2rem, 5vw, 6rem)));
   max-width: none;
@@ -251,6 +251,13 @@
   margin-bottom: 0.18rem;
 }
 
+.home-papers__secondary-heading + .bibliography li .row {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.home-papers__secondary-heading + .bibliography li .abbr {
+  display: none;
+}
 .home-papers__secondary-heading {
   margin-top: clamp(2.5rem, 5vw, 5rem) !important;
 }
