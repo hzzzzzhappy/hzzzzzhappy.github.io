@@ -1,4 +1,4 @@
-﻿/* Wide, two-column home page with independent News and paper scrolling. */
+/* Wide, two-column home page with independent News and paper scrolling. */
 :root {
   --home-background: #ffffff;
 }
@@ -258,15 +258,16 @@ body:has(.home-page) #navbar {
   margin-bottom: 0.18rem;
 }
 
-.home-papers__secondary-heading + .bibliography li .row {
+.home-working-papers .bibliography li .row {
   grid-template-columns: minmax(0, 1fr);
 }
 
-.home-papers__secondary-heading + .bibliography li .abbr {
+.home-working-papers .bibliography li .abbr {
   display: none;
 }
-.home-papers__secondary-heading {
-  margin-top: clamp(2.5rem, 5vw, 5rem) !important;
+
+.home-topic__heading {
+  margin-top: clamp(1.75rem, 3vw, 2.75rem) !important;
 }
 
 @media (max-height: 780px) and (min-width: 901px) {

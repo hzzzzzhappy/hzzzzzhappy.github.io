@@ -61,16 +61,8 @@ layout: default
     </aside>
 
     {% if page.selected_papers %}
-      <section class="publications home-papers" aria-label="Selected publications and working papers" tabindex="0">
-        <h2>
-          <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Some publications</a>
-        </h2>
-        {% include selected_papers.liquid %}
-
-        <h2 class="home-papers__secondary-heading">
-          <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Some working papers</a>
-        </h2>
-        {% include selected_working_papers.liquid %}
+      <section class="publications home-papers" aria-label="Publications by research area" tabindex="0">
+        {% include home_papers_by_topic.liquid %}
       </section>
     {% endif %}
   </article>
