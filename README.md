@@ -4,13 +4,13 @@
 
 主页右侧不再显示 “Some publications” 或 “Some working papers”，改成两个研究方向：
 
-- **Real-World Computer Vision**：现有异常检测、工业检测与空间视觉论文。
-- **Precision Medicine**：现有 CONTEXTOR，以及未来的精准医疗论文。
+- **Precision Medicine**：放在最上方，目前包含 CONTEXTOR，以及未来的精准医疗论文。
+- **Real-World Computer Vision**：放在其后，包含现有异常检测、工业检测与空间视觉论文。
 
 当前归类结果：
 
-- Real-World Computer Vision：8 篇已发表论文 + 2 篇 Working Papers。
 - Precision Medicine：1 篇已发表论文（CONTEXTOR）。
+- Real-World Computer Vision：8 篇已发表论文 + 2 篇 Working Papers。
 - Working Papers 仍不显示图片、占位框或空白图片列。
 
 以后新增或移动论文时，在 _bibliography/papers.bib 的对应条目中维护：
@@ -71,3 +71,4 @@ Working Paper 使用：
 - 已验证旧的 Some publications / Some working papers 标题均不存在。
 - 已验证 9 篇有图论文显示 9 张图片。
 - 已验证 2 篇 Working Papers 均不显示图片。
+
