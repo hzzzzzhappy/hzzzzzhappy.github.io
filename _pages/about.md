@@ -26,9 +26,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am Hanzhe Liang, Ph.D. student in Computational Biology at MBZUAI, supervised by [Jun Wen](https://jungel2star.github.io/). Prior to that, I received my dual Bachelor's degrees in Management and Science from Shenzhen University in June 2026 and also received reasearch training during my undergraduate study, where I was advised by [Can Gao](https://csse.szu.edu.cn/pages/user/index?id=953), [Jinbao Wang](https://jinbao-wang.github.io/), and [Linlin Shen](https://ai.szu.edu.cn/info/1073/1623.htm).
+I am Hanzhe Liang, a Ph.D. student in Computational Biology at Mohamed bin Zayed University of Artificial Intelligence (MBZUAI), supervised by [Jun Wen](https://jungel2star.github.io/). My doctoral research focuses on precision medicine. Prior to joining MBZUAI, I received dual bachelor’s degrees in Management and Science from Shenzhen University in June 2026, with my undergraduate studies primarily focusing on financial technology. During my undergraduate years, I also received research training in real-world computer vision under the guidance of [Can Gao](https://csse.szu.edu.cn/pages/user/index?id=953), [Jinbao Wang](https://jinbao-wang.github.io/), and [Linlin Shen](https://ai.szu.edu.cn/info/1073/1623.htm).
 
-My research interests include anomaly detection, spatial intelligence, digital twins, and AI for precision medicine. I am particularly interested in building generalizable AI systems for industrial inspection and high-order biomedical prediction.
 
 ## Experience
 
