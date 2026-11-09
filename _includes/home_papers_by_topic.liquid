@@ -6,8 +6,12 @@
 <h2 class="home-topic__heading">
   <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Real-World Computer Vision</a>
 </h2>
+<div class="home-working-papers">
+  {% bibliography --group_by none --query @*[selected=true && research_area=real_world_cv && status=working && home_lead=true]* %}
+</div>
+
 {% bibliography --group_by none --query @*[selected=true && research_area=real_world_cv && status=published]* %}
 
 <div class="home-working-papers">
-  {% bibliography --group_by none --query @*[selected=true && research_area=real_world_cv && status=working]* %}
+  {% bibliography --group_by none --query @*[selected=true && research_area=real_world_cv && status=working && home_lead!=true]* %}
 </div>
