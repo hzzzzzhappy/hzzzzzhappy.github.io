@@ -216,13 +216,7 @@ body:has(.home-page) #navbar {
   border: 1px dashed var(--global-divider-color);
   border-radius: inherit;
   background:
-    linear-gradient(
-      135deg,
-      transparent 48%,
-      var(--global-divider-color) 49%,
-      var(--global-divider-color) 51%,
-      transparent 52%
-    ),
+    linear-gradient(135deg, transparent 48%, var(--global-divider-color) 49%, var(--global-divider-color) 51%, transparent 52%),
     var(--global-card-bg-color);
   color: var(--global-text-color-light);
   font-size: 0.68rem;
@@ -258,12 +252,17 @@ body:has(.home-page) #navbar {
   margin-bottom: 0.18rem;
 }
 
-.home-working-papers .bibliography li .row {
+.home-working-papers .bibliography li .row:not(:has(.preview)) {
   grid-template-columns: minmax(0, 1fr);
 }
 
-.home-working-papers .bibliography li .abbr {
+.home-working-papers .bibliography li .row:not(:has(.preview)) .abbr {
   display: none;
+}
+
+.home-working-papers .bibliography li .abbr img {
+  object-fit: contain;
+  background-color: #fff;
 }
 
 .home-topic__heading {
