@@ -1,9 +1,13 @@
 <header>
   <!-- Nav Bar -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
+  <nav
+    id="navbar"
+    class="navbar navbar-light {% if page.layout == 'about' %}navbar-expand-md{% else %}navbar-expand-sm{% endif %} {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}"
+    role="navigation"
+  >
     <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
+      {% if page.permalink != '/' or page.layout == 'about' and site.enable_navbar_social != true %}
+        <a class="navbar-brand title font-weight-lighter" href="{{ '/' | relative_url }}">
           {% if site.title == 'blank' %}
             {% if site.first_name %}
               <span class="font-weight-bold">
@@ -11,10 +15,10 @@
               </span>
             {% endif %}
             {% if site.middle_name %}
-              {{- site.middle_name -}}
+              {{ site.middle_name }}
             {% endif %}
             {% if site.last_name %}
-              {{- site.last_name -}}
+              {{ site.last_name }}
             {% endif %}
           {% else %}
             {{- site.title -}}

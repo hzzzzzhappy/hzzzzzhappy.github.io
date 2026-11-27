@@ -1,11 +1,7 @@
-<h2>
-  <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Precision Medicine</a>
-</h2>
+<h3 class="home-topic__heading">Precision Medicine</h3>
 {% bibliography --group_by none --query @*[selected=true && research_area=precision_medicine && status=published]* %}
 
-<h2 class="home-topic__heading">
-  <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Real-World Computer Vision</a>
-</h2>
+<h3 class="home-topic__heading">Real-World Computer Vision</h3>
 <div class="home-working-papers">
   {% bibliography --group_by none --query @*[selected=true && research_area=real_world_cv && status=working && home_lead=true]* %}
 </div>

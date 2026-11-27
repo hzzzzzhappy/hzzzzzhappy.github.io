@@ -1,73 +1,117 @@
 ---
 layout: default
 ---
-<div class="post home-page">
-  <article class="home-grid">
-    <aside class="home-sidebar" aria-label="Profile, experience, and news">
-      <header class="post-header home-header">
-        <h1 class="post-title">
-          {% if site.title == 'blank' %}
-            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-            {{ site.last_name }}
-          {% else %}
-            {{ site.title }}
-          {% endif %}
-        </h1>
-        <p class="desc">{{ page.subtitle }}</p>
-      </header>
+{%- capture profile_name -%}
+  {%- if site.title == 'blank' -%}
+    {{ site.first_name }}{% if site.middle_name != blank %} {{ site.middle_name }}{% endif %} {{ site.last_name }}
+  {%- else -%}
+    {{ site.title }}
+  {%- endif -%}
+{%- endcapture -%}
 
-      {% if page.profile %}
-        <div class="home-profile">
-          {% if page.profile.image %}
-            <div class="home-profile__image">
-              {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-              {% if page.profile.image_circular %}
-                {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-              {% else %}
-                {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-              {% endif %}
-              {% capture sizes %}(min-width: 900px) 160px, 42vw{% endcapture %}
-              {%
-                include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-                cache_bust=true
-              %}
-            </div>
-          {% endif %}
-          {% if page.profile.more_info %}
-            <div class="more-info home-profile__info">{{ page.profile.more_info }}</div>
-          {% endif %}
+<div class="home-page">
+  <aside class="home-sidebar" aria-labelledby="home-name">
+    <div class="home-profile">
+      {% if page.profile.image %}
+        <div class="home-profile__image">
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% include figure.liquid loading="eager" path=profile_image_path sizes="240px" alt=profile_name cache_bust=true %}
         </div>
       {% endif %}
-
-      <div class="home-copy">{{ content }}</div>
-
-      {% if page.announcements and page.announcements.enabled %}
-        <section class="home-news" aria-labelledby="home-news-title" tabindex="0">
-          <h2 id="home-news-title">
-            <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-          </h2>
-          {% include news.liquid limit=true %}
-        </section>
+      <h1 id="home-name">{{ profile_name | escape }}</h1>
+      {% if page.profile.role %}
+        <p class="home-profile__role">{{ page.profile.role | escape }}</p>
+      {% endif %}
+      {% if page.profile.affiliation %}
+        <p class="home-profile__affiliation">{{ page.profile.affiliation | escape }}</p>
+      {% endif %}
+      {% if page.profile.location %}
+        <p class="home-profile__location">{{ page.profile.location | escape }}</p>
       {% endif %}
 
-      {% if page.latest_posts and page.latest_posts.enabled %}
-        <section class="home-latest-posts" aria-labelledby="home-posts-title">
-          <h2 id="home-posts-title">
-            <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-          </h2>
-          {% include latest_posts.liquid %}
-        </section>
+      {% if page.social %}
+        <ul class="home-profile__links" aria-label="Contact and scholarly profiles">
+          {% if page.profile.email %}
+            <li>
+              <a href="mailto:{{ page.profile.email | escape }}"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Email</a>
+            </li>
+          {% endif %}
+          {% if site.data.socials.github_username %}
+            <li>
+              <a href="https://github.com/{{ site.data.socials.github_username | url_encode }}"
+                ><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a
+              >
+            </li>
+          {% endif %}
+          {% if site.data.socials.scholar_userid %}
+            <li>
+              <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid | url_encode }}" aria-label="Google Scholar">
+                Scholar
+              </a>
+            </li>
+          {% endif %}
+          {% if site.data.socials.orcid_id %}
+            <li>
+              <a href="https://orcid.org/{{ site.data.socials.orcid_id | url_encode }}">ORCID</a>
+            </li>
+          {% endif %}
+        </ul>
       {% endif %}
-    </aside>
+    </div>
+
+    {% if page.profile.interests and page.profile.interests.size > 0 %}
+      <section class="home-interests" aria-labelledby="home-interests-title">
+        <h2 id="home-interests-title">Research Interests</h2>
+        <ul>
+          {% for interest in page.profile.interests %}
+            <li>{{ interest | escape }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  </aside>
+
+  <div class="home-main">
+    <section class="home-copy" aria-labelledby="home-about-title">
+      <h2 id="home-about-title">About</h2>
+      {% if page.subtitle %}
+        <p>{{ page.subtitle }}</p>
+      {% endif %}
+      {{ content }}
+    </section>
 
     {% if page.selected_papers %}
-      <section class="publications home-papers" aria-label="Publications by research area" tabindex="0">
+      <section class="publications home-papers" aria-labelledby="home-papers-title">
+        <div class="home-section-heading">
+          <h2 id="home-papers-title">Selected Publications</h2>
+          <a href="{{ '/publications/' | relative_url }}">All publications</a>
+        </div>
         {% include home_papers_by_topic.liquid %}
       </section>
     {% endif %}
-  </article>
 
-  {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-    {% include newsletter.liquid center=true %}
-  {% endif %}
+    {% if page.announcements and page.announcements.enabled %}
+      <section class="home-news" aria-labelledby="home-news-title">
+        <div class="home-section-heading">
+          <h2 id="home-news-title">News</h2>
+          <a href="{{ '/news/' | relative_url }}">All news</a>
+        </div>
+        {% include news.liquid limit=true %}
+      </section>
+    {% endif %}
+
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <section class="home-latest-posts" aria-labelledby="home-posts-title">
+        <div class="home-section-heading">
+          <h2 id="home-posts-title">Latest Posts</h2>
+          <a href="{{ '/blog/' | relative_url }}">All posts</a>
+        </div>
+        {% include latest_posts.liquid limit=true %}
+      </section>
+    {% endif %}
+  </div>
 </div>
+
+{% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+  {% include newsletter.liquid center=true %}
+{% endif %}
