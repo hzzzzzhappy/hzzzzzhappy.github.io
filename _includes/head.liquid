@@ -10,7 +10,18 @@
 >
 
 <!-- Bootstrap & MDB -->
-<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
+{% assign bootstrap_css = '/assets/css/bootstrap.min.css' | relative_url %}
+{% assign main_css = '/assets/css/main.css' | relative_url %}
+{% if page.layout == 'about' %}
+  {% comment %}PurgeCSS writes the final styles after Jekyll renders these links.{% endcomment %}
+  {% assign build_version = site.time | date: '%Y%m%d%H%M%S' | prepend: '?v=' %}
+  {% assign bootstrap_css = bootstrap_css | append: build_version %}
+  {% assign main_css = main_css | append: build_version %}
+{% else %}
+  {% assign bootstrap_css = bootstrap_css | bust_file_cache %}
+  {% assign main_css = main_css | bust_css_cache %}
+{% endif %}
+<link rel="stylesheet" href="{{ bootstrap_css }}">
 <link
   rel="stylesheet"
   href="{{ site.third_party_libraries.mdb.url.css }}"
@@ -74,7 +85,7 @@
 {% elsif site.icon != blank %}
   <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache}}">
 {% endif %}
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
+<link rel="stylesheet" href="{{ main_css }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 {% if site.enable_darkmode %}
