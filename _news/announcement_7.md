@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-MVFM-3DAD was accepted by the International Conference on Image and Graphics 2026.
+MVFM-3DAD was accepted by the International Conference on Image and Graphics 2026. Congratulations to Liangwei Li on receiving a Best Paper nomination!

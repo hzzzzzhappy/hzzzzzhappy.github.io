@@ -80,16 +80,6 @@ layout: default
       {{ content }}
     </section>
 
-    {% if page.selected_papers %}
-      <section class="publications home-papers" aria-labelledby="home-papers-title">
-        <div class="home-section-heading">
-          <h2 id="home-papers-title">Selected Publications</h2>
-          <a href="{{ '/publications/' | relative_url }}">All publications</a>
-        </div>
-        {% include home_papers_by_topic.liquid %}
-      </section>
-    {% endif %}
-
     {% if page.announcements and page.announcements.enabled %}
       <section class="home-news" aria-labelledby="home-news-title">
         <div class="home-section-heading">
@@ -97,6 +87,16 @@ layout: default
           <a href="{{ '/news/' | relative_url }}">All news</a>
         </div>
         {% include news.liquid limit=true %}
+      </section>
+    {% endif %}
+
+    {% if page.selected_papers %}
+      <section class="publications home-papers" aria-labelledby="home-papers-title">
+        <div class="home-section-heading">
+          <h2 id="home-papers-title">Selected Publications</h2>
+          <a href="{{ '/publications/' | relative_url }}">All publications</a>
+        </div>
+        {% include home_papers_by_topic.liquid %}
       </section>
     {% endif %}
 
